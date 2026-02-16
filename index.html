@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RoboCode Akademie - KI-Programmierlabor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigationsleiste -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo">⚙ ROBOCODE AKADEMIE ⚙</h1>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link" onclick="showSection('home')">STARTSEITE</a></li>
+                <li><a href="#tutorials" class="nav-link" onclick="showSection('tutorials')">LEKTIONEN</a></li>
+                <li><a href="#resources" class="nav-link" onclick="showSection('resources')">RESSOURCEN</a></li>
+                <li><a href="#assignments" class="nav-link" onclick="showSection('assignments')">AUFGABEN</a></li>
+                <li><a href="#login" class="nav-link" onclick="showSection('login')">ZUGANG</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Login-Bereich -->
+    <section id="login" class="section hidden">
+        <div class="login-container">
+            <div class="login-box">
+                <h2>🤖 SYSTEMZUGANG 🤖</h2>
+                <div class="login-robots">
+                    <span class="robot-face">◯◯</span>
+                    <span class="robot-face">◯◯</span>
+                </div>
+                <form id="loginForm" onsubmit="handleLogin(event)">
+                    <div class="form-group">
+                        <label for="username">>> BENUTZERNAME:</label>
+                        <input type="text" id="username" name="username" placeholder="[anmeldedaten_eingeben]" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">>> SICHERHEITSCODE:</label>
+                        <input type="password" id="password" name="password" placeholder="••••••" required>
+                    </div>
+                    <button type="submit" class="btn-primary">[ SYSTEM STARTEN ]</button>
+                </form>
+                <p class="login-info">🔐 Demo-Zugang: student | 123</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Startseite -->
+    <section id="home" class="section">
+        <div class="hero">
+            <div class="hero-robots">
+                <span class="robot-icon">🤖</span>
+            </div>
+            <h1>⚙ ROBOCODE AKADEMIE ⚙</h1>
+            <p class="subtitle">[ KI-TRAININGSFAZILITÄT ]</p>
+            <p class="hero-description">Aktivieren Sie Ihre Java-Programmierkurse durch 🤖 robotergestütztes Lernen, neuronale Netzsimulationen und autonome Aufgabenausführung.</p>
+            <button class="btn-primary" onclick="showSection('tutorials')">[ TRAINING STARTEN ]</button>
+        </div>
+
+        <div class="course-overview">
+            <h2>⚡ KERN-PROZESSMODULE ⚡</h2>
+            <div class="cards-container">
+                <div class="card">
+                    <div class="card-robot">🦾</div>
+                    <h3>VAR - Variablenverarbeitung</h3>
+                    <p>Konfigurieren Sie Datentypen und beherrschen Sie Variableninitialisiationen.</p>
+                </div>
+                <div class="card">
+                    <div class="card-robot">🔀</div>
+                    <h3>CTL - Kontrollschaltung</h3>
+                    <p>Führen Sie bedingte Entscheidungen mit boolescher Logik aus.</p>
+                </div>
+                <div class="card">
+                    <div class="card-robot">🔄</div>
+                    <h3>LOP - Schleifenmotor</h3>
+                    <p>Durchläufe Datenströme mit autonomen Schleifenprotokollen.</p>
+                </div>
+                <div class="card">
+                    <div class="card-robot">⚙️</div>
+                    <h3>MTH - Funktionsmodul</h3>
+                    <p>Erstellen Sie modulare robotische Funktionen mit Parametern.</p>
+                </div>
+                <div class="card">
+                    <div class="card-robot">📦</div>
+                    <h3>ARR - Array-Speicher</h3>
+                    <p>Verwalten Sie Datencontainer und Speicherzuweisung.</p>
+                </div>
+                <div class="card">
+                    <div class="card-robot">⚠️</div>
+                    <h3>EXC - Fehlerbehandlung</h3>
+                    <p>Implementieren Sie Exception Handling und fehlertolerante Systeme.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lektionen -->
+    <section id="tutorials" class="section hidden">
+        <h2>⚡ TRAININGSMODULE ⚡</h2>
+        
+        <div class="tutorial-item">
+            <div class="tutorial-header">
+                <h3>🤖 MODUL-01: SYSTEMSTART</h3>
+                <span class="duration">[DAUER: 30 MIN]</span>
+            </div>
+            <p>🔧 Initialisieren Sie die Java-Umgebung und führen Sie Ihr erstes Programm aus.</p>
+            <button class="btn-secondary" onclick="toggleContent('tutorial1')">[ ◀ ERWEITERN ▶ ]</button>
+            <div id="tutorial1" class="tutorial-content hidden">
+                <h4>>>> SYSTEM-STARTPROTOKOLL</h4>
+                <pre><code>public class RoboInit {
+    public static void main(String[] args) {
+        System.out.println("🤖 ROBOTER ONLINE");
+    }
+}</code></pre>
+                <p><strong>>>> KRITISCHE ROUTINEN:</strong></p>
+                <ul>
+                    <li>⚙️ Jedes System benötigt eine Klassendeklaration</li>
+                    <li>🎯 main() ist Ihr primärer Aktivierungspunkt</li>
+                    <li>📡 System.out.println() gibt Text aus</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="tutorial-item">
+            <div class="tutorial-header">
+                <h3>🤖 MODUL-02: DATENTYP-KONFIGURATION</h3>
+                <span class="duration">[DAUER: 45 MIN]</span>
+            </div>
+            <p>🔧 Konfigurieren Sie primitive Datentypen in Ihrer Roboterarchiitektur.</p>
+            <button class="btn-secondary" onclick="toggleContent('tutorial2')">[ ◀ ERWEITERN ▶ ]</button>
+            <div id="tutorial2" class="tutorial-content hidden">
+                <h4>>>> DATENTYP-KONFIGURATION</h4>
+                <pre><code>// Datentypen
+int alter = 25;
+double gehalt = 50000.50;
+boolean ist_aktiv = true;
+char referenz = 'A';
+
+// Systemreferenz
+String roboter_name = "ALEX-01";
+
+System.out.println("Roboter: " + roboter_name);
+System.out.println("Alter: " + alter);</code></pre>
+                <p><strong>>>> DATENTYP-SPEZIFIKATIONEN:</strong></p>
+                <ul>
+                    <li><strong>int:</strong> Ganzzahlen</li>
+                    <li><strong>double:</strong> Dezimalzahlen mit hoher Präzision</li>
+                    <li><strong>boolean:</strong> Wahr/Falsch-Werte</li>
+                    <li><strong>String:</strong> Textobjekte</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="tutorial-item">
+            <div class="tutorial-header">
+                <h3>🤖 MODUL-03: ENTSCHEIDUNGSLOGIK</h3>
+                <span class="duration">[DAUER: 50 MIN]</span>
+            </div>
+            <p>🔧 Programmieren Sie Bedingungen für autonome Entscheidungen.</p>
+            <button class="btn-secondary" onclick="toggleContent('tutorial3')">[ ◀ ERWEITERN ▶ ]</button>
+            <div id="tutorial3" class="tutorial-content hidden">
+                <h4>>>> LOGIK-ARCHITEKTUR</h4>
+                <pre><code>int status = 18;
+
+if (status >= 18) {
+    System.out.println("🤖 ERWACHSENENMODUS: AKTIVIERT");
+} else if (status >= 13) {
+    System.out.println("🤖 LERNMODUS: AKTIVIERT");
+} else {
+    System.out.println("🤖 SICHERMODUS: AKTIVIERT");
+}</code></pre>
+                <p><strong>>>> ENTSCHEIDUNGSREGELN:</strong></p>
+                <ul>
+                    <li>Nutzen Sie <strong>if</strong> für die primäre Bedingung</li>
+                    <li>Nutzen Sie <strong>else if</strong> für alternative Bedingungen</li>
+                    <li>Nutzen Sie <strong>else</strong> als Fallback</li>
+                    <li>Operatoren: ==, !=, <, >, <=, >=</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="tutorial-item">
+            <div class="tutorial-header">
+                <h3>🤖 MODUL-04: SCHLEIFENVERARBEITUNG</h3>
+                <span class="duration">[DAUER: 55 MIN]</span>
+            </div>
+            <p>🔧 Programmieren Sie repetitive Zyklen mit Schleifen.</p>
+            <button class="btn-secondary" onclick="toggleContent('tutorial4')">[ ◀ ERWEITERN ▶ ]</button>
+            <div id="tutorial4" class="tutorial-content hidden">
+                <h4>>>> SCHLEIFEN-SPEZIFIKATIONEN</h4>
+                <pre><code>// For-Schleife
+for (int i = 1; i <= 5; i++) {
+    System.out.println("Zyklus: " + i);
+}
+
+// While-Schleife
+int zaehler = 1;
+while (zaehler <= 5) {
+    System.out.println("Iteration: " + zaehler);
+    zaehler++;
+}</code></pre>
+                <p><strong>>>> SCHLEIFENAUSWAHL:</strong></p>
+                <ul>
+                    <li><strong>For-Schleife:</strong> Bekannte Wiederholungsanzahl</li>
+                    <li><strong>While-Schleife:</strong> Unbekannte Wiederholungsanzahl</li>
+                    <li>Setzen Sie immer Abbruchbedingungen</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="tutorial-item">
+            <div class="tutorial-header">
+                <h3>🤖 MODUL-05: FUNKTIONSMODULE</h3>
+                <span class="duration">[DAUER: 60 MIN]</span>
+            </div>
+            <p>🔧 Erstellen Sie wiederverwendbare Funktionen mit Parametern.</p>
+            <button class="btn-secondary" onclick="toggleContent('tutorial5')">[ ◀ ERWEITERN ▶ ]</button>
+            <div id="tutorial5" class="tutorial-content hidden">
+                <h4>>>> FUNKTIONS-ANLEITUNG</h4>
+                <pre><code>public static int berechnen(int eingabe_a, int eingabe_b) {
+    return eingabe_a + eingabe_b;
+}
+
+public static void aktivieren(String roboter_name) {
+    System.out.println("🤖 Aktiviere " + roboter_name);
+}
+
+// Funktionen aufrufen
+int ergebnis = berechnen(5, 3);
+System.out.println("Ergebnis: " + ergebnis);
+aktivieren("ALPHA-01");</code></pre>
+                <p><strong>>>> FUNKTIONS-SPEZIFIKATIONEN:</strong></p>
+                <ul>
+                    <li>Funktionen erstellen wiederverwendbare Code-Module</li>
+                    <li><strong>Parameter:</strong> Eingabedaten</li>
+                    <li><strong>Rückgabewert:</strong> Ausgabedaten (void = nichts)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="tutorial-item">
+            <div class="tutorial-header">
+                <h3>🤖 MODUL-06: CODEOCEAN JAVA-EDITOR</h3>
+                <span class="duration">[DAUER: 35 MIN]</span>
+            </div>
+            <p>🔧 Führe Java-Code direkt im Browser mit CodeOcean aus.</p>
+            <button class="btn-secondary" onclick="toggleContent('tutorial6')">[ ◀ ERWEITERN ▶ ]</button>
+            <div id="tutorial6" class="tutorial-content hidden">
+                <h4>>>> CODEOCEAN EINFÜHRUNG</h4>
+                <p><strong>>>> WAS IST CODEOCEAN?</strong></p>
+                <p>CodeOcean ist eine Online-IDE (Integrated Development Environment) für Code-Entwicklung. Sie können Java, Python, C++, JavaScript und viele andere Sprachen schreiben und direkt ausführen - ohne Installation!</p>
+                
+                <p><strong>>>> CODEOCEAN VORTEILE:</strong></p>
+                <ul>
+                    <li>✅ Komplett kostenlos und im Browser</li>
+                    <li>✅ Unterstützt Java, Python, C++, JavaScript und mehr</li>
+                    <li>✅ Code kompilieren und ausführen in Echtzeit</li>
+                    <li>✅ Automatische Fehlerprüfung und Debugging</li>
+                    <li>✅ Projekte speichern und teilen</li>
+                    <li>✅ Perfekt für Anfänger und Profis</li>
+                </ul>
+
+                <p><strong>>>> HELLO WORLD IN JAVA - CODEOCEAN BEISPIEL:</strong></p>
+                <pre><code>public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("🤖 Hallo CodeOcean!");
+        System.out.println("Willkommen zum Java-Programmieren");
+    }
+}</code></pre>
+
+                <p><strong>>>> CODEOCEAN ANLEITUNG:</strong></p>
+                <ol>
+                    <li>🌐 Besuche <a href="https://codeocean.com" target="_blank" style="color: #00ff88; text-decoration: underline;">CodeOcean.com</a></li>
+                    <li>🔧 Klick auf "Start Coding" oder "New Project"</li>
+                    <li>🐍 Wähle Java als Programmiersprache</li>
+                    <li>📝 Schreib deinen Java-Code im Editor</li>
+                    <li>▶️ Klick auf "Run" um den Code auszuführen</li>
+                    <li>🔍 Beobachte die Ausgabe im Console-Fenster</li>
+                    <li>💾 Speichere dein Projekt</li>
+                </ol>
+
+                <p><strong>>>> WICHTIGE FEATURES:</strong></p>
+                <ul>
+                    <li>🎯 <strong>Automatische Fehleranalyse:</strong> Fehler werden sofort angezeigt</li>
+                    <li>🔧 <strong>Compiler:</strong> Kompiliert deinen Code automatisch</li>
+                    <li>📊 <strong>Ausgabe:</strong> Zeigt Konsolenausgabe in Echtzeit</li>
+                    <li>💙 <strong>Syntax Highlighting:</strong> Farbige Code-Formatierung</li>
+                </ul>
+
+                <p><strong>>>> NÄCHSTE SCHRITTE:</strong></p>
+                <p>🤖 Öffne CodeOcean und erstelle dein erstes Java-Programm!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ressourcen -->
+    <section id="resources" class="section hidden">
+        <h2>⚡ DOWNLOAD-ZENTRUM ⚡</h2>
+        <p class="section-intro">>>> Zugriff auf technische Datenbanken und Spezifikationen</p>
+
+        <div class="resources-container">
+            <div class="resource-card">
+                <div class="resource-icon">📄</div>
+                <h3>Java-Referenz</h3>
+                <p>🔧 Vollständige technische Dokumentation für Java.</p>
+                <a href="#" class="btn-secondary">[ HERUNTERLADEN ]</a>
+            </div>
+
+            <div class="resource-card">
+                <div class="resource-icon">📘</div>
+                <h3>Programmierer-Handbuch v2.0</h3>
+                <p>🔧 Umfassender Leitfaden für alle Trainingsmodule.</p>
+                <a href="#" class="btn-secondary">[ HERUNTERLADEN ]</a>
+            </div>
+
+            <div class="resource-card">
+                <div class="resource-icon">🗂️</div>
+                <h3>Code-Archiv</h3>
+                <p>🔧 Sammlung von funktionierenden Programmen.</p>
+                <a href="#" class="btn-secondary">[ HERUNTERLADEN ]</a>
+            </div>
+
+            <div class="resource-card">
+                <div class="resource-icon">🎯</div>
+                <h3>Aufgaben-Sammlung</h3>
+                <p>🔧 200+ Programmieraufgaben und Herausforderungen.</p>
+                <a href="#" class="btn-secondary">[ HERUNTERLADEN ]</a>
+            </div>
+
+            <div class="resource-card">
+                <div class="resource-icon">🌐</div>
+                <h3>Externe Links</h3>
+                <p>🔧 Verbundene Ressourcen und Dokumentation.</p>
+                <ul>
+                    <li><a href="https://docs.oracle.com/javase/tutorial/" target="_blank">Oracle-Dokumentation</a></li>
+                    <li><a href="https://www.w3schools.com/java/" target="_blank">W3Schools Java</a></li>
+                </ul>
+            </div>
+
+            <div class="resource-card">
+                <div class="resource-icon">📚</div>
+                <h3>Empfehlung Bücher</h3>
+                <p>🔧 Empfehlenswerte technische Publikationen:</p>
+                <ul>
+                    <li>"Head First Java" - Fortgeschrittene Systeme</li>
+                    <li>"Java Anfänger-Leitfaden" - Grundlagen</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Aufgaben -->
+    <section id="assignments" class="section hidden">
+        <h2>⚡ AUFGABEN-SUITE ⚡</h2>
+        <p class="section-intro">>>> Führen Sie operative Simulationen und Herausforderungen durch</p>
+
+        <div class="assignments-container">
+            <div class="assignment-card">
+                <div class="assignment-header">
+                    <h3>🤖 AUFGABE-01: SYSTEM-START</h3>
+                    <span class="difficulty lvl1">⭐ STUFE-01</span>
+                </div>
+                <p><strong>>>> DEADLINE:</strong> WOCHE-01 | <strong>STATUS:</strong> AKTIV</p>
+                <p><strong>>>> ZIEL:</strong> Führen Sie ein Begrüßungsprogramm aus.</p>
+                <p><strong>>>> ANFORDERUNGEN:</strong></p>
+                <ul>
+                    <li>✓ Programm kompilieren</li>
+                    <li>✓ Ausgabe auf Konsole</li>
+                    <li>✓ Programmausführung</li>
+                </ul>
+                <button class="btn-secondary" onclick="toggleContent('assignment1')">[ DETAILS ]</button>
+                <div id="assignment1" class="assignment-details hidden">
+                    <h4>>>> SPEZIFIKATIONEN:</h4>
+                    <ol>
+                        <li>🔧 Erstelle: RoboGreeter.java</li>
+                        <li>🔧 Definiere RoboGreeter-Klasse mit main()</li>
+                        <li>🔧 Ausgabe einer personalizierten Begrüßung</li>
+                    </ol>
+                    <h4>>>> ABGABE:</h4>
+                    <p>🤖 Laden Sie die .java-Datei hoch</p>
+                </div>
+            </div>
+
+            <div class="assignment-card">
+                <div class="assignment-header">
+                    <h3>🤖 AUFGABE-02: RECHEN-ENGINE</h3>
+                    <span class="difficulty lvl2">⭐⭐ STUFE-02</span>
+                </div>
+                <p><strong>>>> DEADLINE:</strong> WOCHE-02 | <strong>STATUS:</strong> AKTIV</p>
+                <p><strong>>>> ZIEL:</strong> Erstelle einen Rechner mit vier Operationen.</p>
+                <p><strong>>>> ANFORDERUNGEN:</strong></p>
+                <ul>
+                    <li>✓ Variablen konfigurieren</li>
+                    <li>✓ Mathematische Operationen</li>
+                    <li>✓ Modulare Funktionen</li>
+                </ul>
+                <button class="btn-secondary" onclick="toggleContent('assignment2')">[ DETAILS ]</button>
+                <div id="assignment2" class="assignment-details hidden">
+                    <h4>>>> SPEZIFIKATIONEN:</h4>
+                    <ol>
+                        <li>🔧 Funktionen: addieren, subtrahieren, multiplizieren, dividieren</li>
+                        <li>🔧 Jede Funktion akzeptiert zwei Eingabewerte</li>
+                        <li>🔧 Rückgabe des berechneten Ergebnisses</li>
+                        <li>🔧 Teste alle Funktionen in main()</li>
+                    </ol>
+                    <h4>>>> ERWARTETE AUSGABE:</h4>
+                    <pre><code>🤖 Addition: 5 + 3 = 8
+🤖 Subtraktion: 5 - 3 = 2
+🤖 Multiplikation: 5 * 3 = 15
+🤖 Division: 6 / 3 = 2.0</code></pre>
+                </div>
+            </div>
+
+            <div class="assignment-card">
+                <div class="assignment-header">
+                    <h3>🤖 AUFGABE-03: NOTEN-UMRECHNER</h3>
+                    <span class="difficulty lvl2">⭐⭐ STUFE-02</span>
+                </div>
+                <p><strong>>>> DEADLINE:</strong> WOCHE-03 | <strong>STATUS:</strong> AKTIV</p>
+                <p><strong>>>> ZIEL:</strong> Konvertiere Zahlennoten in Buchstabennoten.</p>
+                <p><strong>>>> ANFORDERUNGEN:</strong></p>
+                <ul>
+                    <li>✓ Bedingte Anweisungen</li>
+                    <li>✓ Logische Strukturen</li>
+                    <li>✓ Eingabevalidierung</li>
+                </ul>
+                <button class="btn-secondary" onclick="toggleContent('assignment3')">[ DETAILS ]</button>
+                <div id="assignment3" class="assignment-details hidden">
+                    <h4>>>> NOTEN-TABELLE:</h4>
+                    <ul>
+                        <li>90-100: A >> AUSGEZEICHNET ⭐</li>
+                        <li>80-89: B >> GUT ⭐</li>
+                        <li>70-79: C >> BEFRIEDIGEND ⭐</li>
+                        <li>60-69: D >> AUSREICHEND ⭐</li>
+                        <li>Unter 60: F >> NICHT BESTANDEN ⭐</li>
+                    </ul>
+                    <h4>>>> IMPLEMENTATION:</h4>
+                    <ol>
+                        <li>🔧 Zahlennote als Eingabe</li>
+                        <li>🔧 Validiere den Bereich (0-100)</li>
+                        <li>🔧 Konvertiere in Buchstabennote</li>
+                        <li>🔧 Zeige das Ergebnis an</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="assignment-card">
+                <div class="assignment-header">
+                    <h3>🤖 AUFGABE-04: ZAHLENRATESPIEL</h3>
+                    <span class="difficulty lvl2">⭐⭐ STUFE-02</span>
+                </div>
+                <p><strong>>>> DEADLINE:</strong> WOCHE-04 | <strong>STATUS:</strong> AKTIV</p>
+                <p><strong>>>> ZIEL:</strong> Erstelle ein interaktives Zahlenratespiel.</p>
+                <p><strong>>>> ANFORDERUNGEN:</strong></p>
+                <ul>
+                    <li>✓ Schleifensteuerung</li>
+                    <li>✓ Zufallszahlengenerierung</li>
+                    <li>✓ Spiellogik</li>
+                </ul>
+                <button class="btn-secondary" onclick="toggleContent('assignment4')">[ DETAILS ]</button>
+                <div id="assignment4" class="assignment-details hidden">
+                    <h4>>>> SPIEL-SPEZIFIKATIONEN:</h4>
+                    <ol>
+                        <li>🔧 Generiere Zufallszahl (1-100)</li>
+                        <li>🔧 Akzeptiere Benutzereingabe</li>
+                        <li>🔧 Gebe zu hoch/zu niedrig Hinweis</li>
+                        <li>🔧 Zähle Versuche</li>
+                        <li>🔧 Zeige Gewinn-Nachricht</li>
+                    </ol>
+                    <h4>>>> BONUS-NIVEAU:</h4>
+                    <p>🔧 Schwierigkeitsgrade: Einfach(1-50), Schwer(1-1000)</p>
+                </div>
+            </div>
+
+            <div class="assignment-card">
+                <div class="assignment-header">
+                    <h3>🤖 AUFGABE-05: DATENANALYSE</h3>
+                    <span class="difficulty lvl3">⭐⭐⭐ STUFE-03</span>
+                </div>
+                <p><strong>>>> DEADLINE:</strong> WOCHE-05 | <strong>STATUS:</strong> AKTIV</p>
+                <p><strong>>>> ZIEL:</strong> Implementiere statistische Analyse.</p>
+                <p><strong>>>> ANFORDERUNGEN:</strong></p>
+                <ul>
+                    <li>✓ Array-Datenstrukturen</li>
+                    <li>✓ Statistische Algorithmen</li>
+                    <li>✓ Komplexe Berechnungen</li>
+                </ul>
+                <button class="btn-secondary" onclick="toggleContent('assignment5')">[ DETAILS ]</button>
+                <div id="assignment5" class="assignment-details hidden">
+                    <h4>>>> BERECHNUNGSANFORDERUNGEN:</h4>
+                    <ol>
+                        <li>🔧 Initialisiere Array (10+ Elemente)</li>
+                        <li>🔧 Berechne Summe</li>
+                        <li>🔧 Berechne Durchschnitt</li>
+                        <li>🔧 Finde Maximum</li>
+                        <li>🔧 Finde Minimum</li>
+                        <li>🔧 Zeige Statistiken an</li>
+                    </ol>
+                    <h4>>>> ADVANCED:</h4>
+                    <p>🔧 Median und Standardabweichung</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard -->
+    <section id="dashboard" class="section hidden">
+        <div class="dashboard-container">
+            <h2>🤖 KONTROLLTAFEL [ <span id="studentName">OFFLINE</span> ] 🤖</h2>
+            <div class="robot-status">
+                <span class="status-light on"></span>
+                <span class="status-light on"></span>
+                <span class="status-light on"></span>
+            </div>
+            <p>>>> Systemzugriff gewährt. Fortgeschrittenes Training wird fortgesetzt.</p>
+            
+            <div id="codeoceanSection" class="codeocean-dashboard hidden">
+                <h3>💻 CODEOCEAN JAVA-EDITOR 💻</h3>
+                <p>Schreibe und führe Java-Code direkt im Browser aus:</p>
+                <a href="https://codeocean.com" target="_blank" class="btn-secondary">[ ÖFFNE CODEOCEAN EDITOR ]</a>
+                <p style="margin-top: 1rem; font-size: 0.9rem;">>>> Interaktive Java-Programmierung mit Live-Ausführung</p>
+            </div>
+
+            <div class="dashboard-stats">
+                <div class="stat-card">
+                    <h4>⚙️ FORTSCHRITT</h4>
+                    <p class="stat-value">60%</p>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 60%"></div></div>
+                </div>
+                <div class="stat-card">
+                    <h4>🎯 MODULE ABGESCHLOSSEN</h4>
+                    <p class="stat-value">3/5</p>
+                </div>
+                <div class="stat-card">
+                    <h4>✅ AUFGABEN ERLEDIGT</h4>
+                    <p class="stat-value">2/5</p>
+                </div>
+            </div>
+            <button class="btn-secondary" onclick="handleLogout()">[ ABMELDEN ]</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>🤖 ROBOCODE AKADEMIE SYSTEM v3.0 🤖 | KI-Lernfazilität | © 2026</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+                <div class="login-robots">
+                    <span class="robot-face">◯◯</span>
+                    <span class="robot-face">◯◯</span>
+                </div>
+                <form id="loginForm" onsubmit="handleLogin(event)">
+                    <div class="form-group">
+                        <label for="username">>> USER IDENTITY:</label>
+                        <input type="text" id="username" name="username" placeholder="[enter_credentials]" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">>> SECURITY CODE:</label>
+                        <input type="password" id="password" name="password" placeholder="••••••" required>
+                    </div>
+                    <button type="submit" class="btn-primary">[ BOOT SYSTEM ]</button>
+                </form>
+                <p class="login-info">🔐 Demo Access: student | 123</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Home Section -->
+    <section id="home" class="section">
+        <div class="hero">
+            <div class="hero-robots">
+                <span class="robot-icon">🤖</span>
+            </div>
+            <h1>⚙ ROBOCODE ACADEMY ⚙</h1>
+            <p class="subtitle">[ ARTIFICIAL INTELLIGENCE TRAINING FACILITY ]</p>
+            <p class="hero-description">Activate your Java programming protocols through 🤖 robotic-assisted learning, neural network simulations, and autonomous task execution.</p>
+            <button class="btn-primary" onclick="showSection('tutorials')">[ INITIALIZE TRAINING ]</button>
+        </div>
+
+        <div class="course-overview">
+            <h2>⚡ CORE PROCESSOR MODULES ⚡</h2>
+            <div class="cards-container">
+                <div class="card">
+                    <div class="card-robot">🦾</div>
+                    <h3>VAR - Variable Processors</h3>
+                    <p>Configure data type servos and master variable initialization protocols.</p>
+                </div>
+                <div class="card">
+                    <div class="card-robot">🔀</div>
+                    <h3>CTL - Control Circuit</h3>
+                    <p>Execute conditional decision gates with boolean logic circuits.</p>
+                </div>
+                <div class="card">
+                    <div class="card-robot">🔄</div>
+                    <h3>LOP - Loop Engine</h3>
+                    <p>Iterate through data streams with autonomous loop protocols.</p>
+                </div>
+                <div class="card">
+                    <div class="card-robot">⚙️</div>
+                    <h3>MTH - Method Module</h3>
+                    <p>Construct modular robotic functions with precision parameters.</p>
+                </div>
+                <div class="card">
+                    <div class="card-robot">📦</div>
+                    <h3>ARR - Array Storage</h3>
+                    <p>Manage distributed data containers and memory allocation.</p>
+                </div>
+                <div class="card">
+                    <div class="card-robot">⚠️</div>
+                    <h3>EXC - Error Recovery</h3>
+                    <p>Implement exception handling and fault-tolerant systems.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tutorials Section -->
+    <section id="tutorials" class="section hidden">
+        <h2>⚡ TRAINING SEQUENCE MODULES ⚡</h2>
+        
+        <div class="tutorial-item">
+            <div class="tutorial-header">
+                <h3>🤖 MODULE-01: BOOT SEQUENCE INITIALIZATION</h3>
+                <span class="duration">[DURATION: 30 CIRCUITS]</span>
+            </div>
+            <p>🔧 Initialize Java environment and execute your first program sequence.</p>
+            <button class="btn-secondary" onclick="toggleContent('tutorial1')">[ ◀ EXPAND ▶ ]</button>
+            <div id="tutorial1" class="tutorial-content hidden">
+                <h4>>>> SYSTEM STARTUP PROTOCOL</h4>
+                <pre><code>public class RoboInitialize {
+    public static void main(String[] args) {
+        System.out.println("🤖 ROBOT ONLINE");
+    }
+}</code></pre>
+                <p><strong>>>> CRITICAL ROUTINES:</strong></p>
+                <ul>
+                    <li>⚙️ Each system requires a class chassis</li>
+                    <li>🎯 main() is your primary activation protocol</li>
+                    <li>📡 System.out.println() broadcasts to console</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="tutorial-item">
+            <div class="tutorial-header">
+                <h3>🤖 MODULE-02: DATA TYPE SERVO CALIBRATION</h3>
+                <span class="duration">[DURATION: 45 CIRCUITS]</span>
+            </div>
+            <p>🔧 Configure primitive servos and reference systems in your robotic architecture.</p>
+            <button class="btn-secondary" onclick="toggleContent('tutorial2')">[ ◀ EXPAND ▶ ]</button>
+            <div id="tutorial2" class="tutorial-content hidden">
+                <h4>>>> SERVO CONFIGURATION MAP</h4>
+                <pre><code>// Servo Types Configuration
+int servo_angle = 25;
+double servo_force = 50000.50;
+boolean servo_active = true;
+char servo_id = 'A';
+
+// System Reference
+String robot_name = "ALEX-01";
+
+System.out.println("Robot: " + robot_name);
+System.out.println("Angle: " + servo_angle);</code></pre>
+                <p><strong>>>> SERVO SPECIFICATIONS:</strong></p>
+                <ul>
+                    <li><strong>int:</strong> Integer servo positions</li>
+                    <li><strong>double:</strong> High-precision force values</li>
+                    <li><strong>boolean:</strong> On/Off servo states</li>
+                    <li><strong>String:</strong> System identification codes</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="tutorial-item">
+            <div class="tutorial-header">
+                <h3>🤖 MODULE-03: DECISION LOGIC CIRCUITS</h3>
+                <span class="duration">[DURATION: 50 CIRCUITS]</span>
+            </div>
+            <p>🔧 Engineer conditional circuits for autonomous robot decision-making.</p>
+            <button class="btn-secondary" onclick="toggleContent('tutorial3')">[ ◀ EXPAND ▶ ]</button>
+            <div id="tutorial3" class="tutorial-content hidden">
+                <h4>>>> LOGIC GATE ARCHITECTURE</h4>
+                <pre><code>int robot_status = 18;
+
+if (robot_status >= 18) {
+    System.out.println("🤖 ADULT MODE: ACTIVATED");
+} else if (robot_status >= 13) {
+    System.out.println("🤖 LEARNING MODE: ACTIVATED");
+} else {
+    System.out.println("🤖 SAFE MODE: ACTIVATED");
+}</code></pre>
+                <p><strong>>>> DECISION GATES:</strong></p>
+                <ul>
+                    <li>Use <strong>if</strong> for primary gate condition</li>
+                    <li>Use <strong>else if</strong> for alternate gates</li>
+                    <li>Use <strong>else</strong> for default fallback</li>
+                    <li>Operators: ==, !=, <, >, <=, >=</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="tutorial-item">
+            <div class="tutorial-header">
+                <h3>🤖 MODULE-04: ITERATION PROCESSOR</h3>
+                <span class="duration">[DURATION: 55 CIRCUITS]</span>
+            </div>
+            <p>🔧 Program repetitive cycles with autonomous loop engines.</p>
+            <button class="btn-secondary" onclick="toggleContent('tutorial4')">[ ◀ EXPAND ▶ ]</button>
+            <div id="tutorial4" class="tutorial-content hidden">
+                <h4>>>> LOOP ENGINE SPECIFICATIONS</h4>
+                <pre><code>// Sequence Loop [FOR]
+for (int cycle = 1; cycle <= 5; cycle++) {
+    System.out.println("Processing Cycle: " + cycle);
+}
+
+// Conditional Loop [WHILE]
+int processor = 1;
+while (processor <= 5) {
+    System.out.println("Iteration: " + processor);
+    processor++;
+}</code></pre>
+                <p><strong>>>> LOOP SELECTION MATRIX:</strong></p>
+                <ul>
+                    <li><strong>For loop:</strong> Known cycle count</li>
+                    <li><strong>While loop:</strong> Unknown cycle count</li>
+                    <li>Always set exit conditions (prevent infinite loops)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="tutorial-item">
+            <div class="tutorial-header">
+                <h3>🤖 MODULE-05: FUNCTION MODULE ASSEMBLY</h3>
+                <span class="duration">[DURATION: 60 CIRCUITS]</span>
+            </div>
+            <p>🔧 Assemble reusable robotic function modules with parameters.</p>
+            <button class="btn-secondary" onclick="toggleContent('tutorial5')">[ ◀ EXPAND ▶ ]</button>
+            <div id="tutorial5" class="tutorial-content hidden">
+                <h4>>>> MODULAR FUNCTION BLUEPRINT</h4>
+                <pre><code>public static int calculate(int input_a, int input_b) {
+    return input_a + input_b;
+}
+
+public static void activate(String robot_name) {
+    System.out.println("🤖 Activating " + robot_name);
+}
+
+// Module Execution
+int result = calculate(5, 3);
+System.out.println("Result: " + result);
+activate("ALPHA-01");</code></pre>
+                <p><strong>>>> MODULE SPECIFICATIONS:</strong></p>
+                <ul>
+                    <li>Functions create autonomous code modules</li>
+                    <li><strong>Parameters:</strong> Input data streams</li>
+                    <li><strong>Return type:</strong> Output values (void = null)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources" class="section hidden">
+        <h2>⚡ TECHNICAL DOWNLOAD CENTER ⚡</h2>
+        <p class="section-intro">>>> Access technical databases and robotic specifications</p>
+
+        <div class="resources-container">
+            <div class="resource-card">
+                <div class="resource-icon">📄</div>
+                <h3>Java Protocol Reference</h3>
+                <p>🔧 Complete technical documentation for Java programming.</p>
+                <a href="#" class="btn-secondary">[ DOWNLOAD ]</a>
+            </div>
+
+            <div class="resource-card">
+                <div class="resource-icon">📘</div>
+                <h3>Programmer Manual v2.0</h3>
+                <p>🔧 Comprehensive guide covering all training modules.</p>
+                <a href="#" class="btn-secondary">[ DOWNLOAD ]</a>
+            </div>
+
+            <div class="resource-card">
+                <div class="resource-icon">🗂️</div>
+                <h3>Code Repository Archive</h3>
+                <p>🔧 Library of working programs with technical annotations.</p>
+                <a href="#" class="btn-secondary">[ DOWNLOAD ]</a>
+            </div>
+
+            <div class="resource-card">
+                <div class="resource-icon">🎯</div>
+                <h3>Challenge Database</h3>
+                <p>🔧 200+ programming challenges and autonomous tasks.</p>
+                <a href="#" class="btn-secondary">[ DOWNLOAD ]</a>
+            </div>
+
+            <div class="resource-card">
+                <div class="resource-icon">🌐</div>
+                <h3>External Networks</h3>
+                <p>🔧 Connected resource gateways and documentation hubs.</p>
+                <ul>
+                    <li><a href="https://docs.oracle.com/javase/tutorial/" target="_blank">Oracle Database</a></li>
+                    <li><a href="https://www.w3schools.com/java/" target="_blank">W3 Archive</a></li>
+                </ul>
+            </div>
+
+            <div class="resource-card">
+                <div class="resource-icon">📚</div>
+                <h3>Reference Libraries</h3>
+                <p>🔧 Recommended technical publications:</p>
+                <ul>
+                    <li>"Head First Protocols" - Advanced Systems</li>
+                    <li>"Java Initialization Guide" - Foundations</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Assignments Section -->
+    <section id="assignments" class="section hidden">
+        <h2>⚡ AUTONOMOUS TASK SUITE ⚡</h2>
+        <p class="section-intro">>>> Execute operational simulations and complete challenge sequences</p>
+
+        <div class="assignments-container">
+            <div class="assignment-card">
+                <div class="assignment-header">
+                    <h3>🤖 TASK-01: SYSTEM BOOT</h3>
+                    <span class="difficulty lvl1">⭐ LEVEL-01</span>
+                </div>
+                <p><strong>>>> DEADLINE:</strong> WEEK-01 | <strong>STATUS:</strong> ACTIVE</p>
+                <p><strong>>>> OBJECTIVE:</strong> Execute greeting program sequence.</p>
+                <p><strong>>>> MODULES REQUIRED:</strong></p>
+                <ul>
+                    <li>✓ Program compilation</li>
+                    <li>✓ Console output activation</li>
+                    <li>✓ Runtime execution</li>
+                </ul>
+                <button class="btn-secondary" onclick="toggleContent('assignment1')">[ DETAILS ]</button>
+                <div id="assignment1" class="assignment-details hidden">
+                    <h4>>>> SPECIFICATIONS:</h4>
+                    <ol>
+                        <li>🔧 Create: RobotGreeter.java</li>
+                        <li>🔧 Define RobotGreeter class with main()</li>
+                        <li>🔧 Output personalized greeting message</li>
+                    </ol>
+                    <h4>>>> SUBMISSION:</h4>
+                    <p>🤖 Upload .java file to academy portal</p>
+                </div>
+            </div>
+
+            <div class="assignment-card">
+                <div class="assignment-header">
+                    <h3>🤖 TASK-02: CALCULATION ENGINE</h3>
+                    <span class="difficulty lvl2">⭐⭐ LEVEL-02</span>
+                </div>
+                <p><strong>>>> DEADLINE:</strong> WEEK-02 | <strong>STATUS:</strong> ACTIVE</p>
+                <p><strong>>>> OBJECTIVE:</strong> Construct arithmetic operation processor.</p>
+                <p><strong>>>> MODULES REQUIRED:</strong></p>
+                <ul>
+                    <li>✓ Variable servo setup</li>
+                    <li>✓ Math operation execution</li>
+                    <li>✓ Modular function architecture</li>
+                </ul>
+                <button class="btn-secondary" onclick="toggleContent('assignment2')">[ DETAILS ]</button>
+                <div id="assignment2" class="assignment-details hidden">
+                    <h4>>>> SPECIFICATIONS:</h4>
+                    <ol>
+                        <li>🔧 Functions: add, subtract, multiply, divide</li>
+                        <li>🔧 Each accepts two input values</li>
+                        <li>🔧 Return calculated results</li>
+                        <li>🔧 Test all functions in main()</li>
+                    </ol>
+                    <h4>>>> EXPECTED OUTPUT:</h4>
+                    <pre><code>🤖 Addition: 5 + 3 = 8
+🤖 Subtraction: 5 - 3 = 2
+🤖 Multiplication: 5 * 3 = 15
+🤖 Division: 6 / 3 = 2.0</code></pre>
+                </div>
+            </div>
+
+            <div class="assignment-card">
+                <div class="assignment-header">
+                    <h3>🤖 TASK-03: RATING CONVERTER</h3>
+                    <span class="difficulty lvl2">⭐⭐ LEVEL-02</span>
+                </div>
+                <p><strong>>>> DEADLINE:</strong> WEEK-03 | <strong>STATUS:</strong> ACTIVE</p>
+                <p><strong>>>> OBJECTIVE:</strong> Translate numerical grades to letter designations.</p>
+                <p><strong>>>> MODULES REQUIRED:</strong></p>
+                <ul>
+                    <li>✓ Conditional decision gates</li>
+                    <li>✓ Logic tree structure</li>
+                    <li>✓ Input validation</li>
+                </ul>
+                <button class="btn-secondary" onclick="toggleContent('assignment3')">[ DETAILS ]</button>
+                <div id="assignment3" class="assignment-details hidden">
+                    <h4>>>> GRADING MATRIX:</h4>
+                    <ul>
+                        <li>90-100: A >> EXCELLENCE ⭐</li>
+                        <li>80-89: B >> PROFICIENT ⭐</li>
+                        <li>70-79: C >> SATISFACTORY ⭐</li>
+                        <li>60-69: D >> MARGINAL ⭐</li>
+                        <li>Below 60: F >> RESET NEEDED ⭐</li>
+                    </ul>
+                    <h4>>>> IMPLEMENTATION:</h4>
+                    <ol>
+                        <li>🔧 Accept numerical input grade</li>
+                        <li>🔧 Validate range (0-100)</li>
+                        <li>🔧 Convert to letter designation</li>
+                        <li>🔧 Display classification</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="assignment-card">
+                <div class="assignment-header">
+                    <h3>🤖 TASK-04: GUESS SIMULATOR</h3>
+                    <span class="difficulty lvl2">⭐⭐ LEVEL-02</span>
+                </div>
+                <p><strong>>>> DEADLINE:</strong> WEEK-04 | <strong>STATUS:</strong> ACTIVE</p>
+                <p><strong>>>> OBJECTIVE:</strong> Build interactive prediction game engine.</p>
+                <p><strong>>>> MODULES REQUIRED:</strong></p>
+                <ul>
+                    <li>✓ Loop iteration control</li>
+                    <li>✓ Random value generation</li>
+                    <li>✓ Game logic processing</li>
+                </ul>
+                <button class="btn-secondary" onclick="toggleContent('assignment4')">[ DETAILS ]</button>
+                <div id="assignment4" class="assignment-details hidden">
+                    <h4>>>> GAME ENGINE SPECS:</h4>
+                    <ol>
+                        <li>🔧 Generate random number (1-100)</li>
+                        <li>🔧 Accept player guess input</li>
+                        <li>🔧 Provide too-high/too-low feedback</li>
+                        <li>🔧 Track attempt counter</li>
+                        <li>🔧 Victory sequence activation</li>
+                    </ol>
+                    <h4>>>> BONUS LEVEL:</h4>
+                    <p>🔧 Difficulty modes: Easy(1-50), Hard(1-1000)</p>
+                </div>
+            </div>
+
+            <div class="assignment-card">
+                <div class="assignment-header">
+                    <h3>🤖 TASK-05: DATA ANALYSIS SYSTEM</h3>
+                    <span class="difficulty lvl3">⭐⭐⭐ LEVEL-03</span>
+                </div>
+                <p><strong>>>> DEADLINE:</strong> WEEK-05 | <strong>STATUS:</strong> ACTIVE</p>
+                <p><strong>>>> OBJECTIVE:</strong> Implement statistical analysis processor.</p>
+                <p><strong>>>> MODULES REQUIRED:</strong></p>
+                <ul>
+                    <li>✓ Array data structures</li>
+                    <li>✓ Statistical algorithms</li>
+                    <li>✓ Complex computations</li>
+                </ul>
+                <button class="btn-secondary" onclick="toggleContent('assignment5')">[ DETAILS ]</button>
+                <div id="assignment5" class="assignment-details hidden">
+                    <h4>>>> COMPUTATION REQUIREMENTS:</h4>
+                    <ol>
+                        <li>🔧 Initialize data array (10+ elements)</li>
+                        <li>🔧 Calculate total sum</li>
+                        <li>🔧 Compute average (mean)</li>
+                        <li>🔧 Find maximum value</li>
+                        <li>🔧 Find minimum value</li>
+                        <li>🔧 Display complete statistics</li>
+                    </ol>
+                    <h4>>>> ADVANCED ALGORITHMS:</h4>
+                    <p>🔧 Median and standard deviation calculations</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Section -->
+    <section id="dashboard" class="section hidden">
+        <div class="dashboard-container">
+            <h2>🤖 STUDENT CONTROL PANEL [ <span id="studentName">OFFLINE</span> ] 🤖</h2>
+            <div class="robot-status">
+                <span class="status-light on"></span>
+                <span class="status-light on"></span>
+                <span class="status-light on"></span>
+            </div>
+            <p>>>> System access granted. Continue programming protocols.</p>
+            <div class="dashboard-stats">
+                <div class="stat-card">
+                    <h4>⚙️ PROGRESS</h4>
+                    <p class="stat-value">60%</p>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 60%"></div></div>
+                </div>
+                <div class="stat-card">
+                    <h4>🎯 MODULES CLEARED</h4>
+                    <p class="stat-value">3/5</p>
+                </div>
+                <div class="stat-card">
+                    <h4>✅ TASKS COMPLETED</h4>
+                    <p class="stat-value">2/5</p>
+                </div>
+            </div>
+            <button class="btn-secondary" onclick="handleLogout()">[ DISCONNECT ]</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>🤖 ROBOCODE ACADEMY SYSTEM v3.0 🤖 | AI Learning Facility | © 2026</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

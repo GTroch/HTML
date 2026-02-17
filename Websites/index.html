@@ -124,9 +124,13 @@
             margin: 18px 0;
             font-family: 'Courier New', monospace;
             font-size: 0.95em;
+            line-height: 1.7;
             border-left: 4px solid #d4af37;
             transition: all 0.3s ease;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            white-space: pre;
+            tab-size: 4;
+            -moz-tab-size: 4;
         }
         
         .code-block:hover {
@@ -379,13 +383,11 @@
             </div>
             
             <h3>Dein erstes Java-Programm</h3>
-            <div class="code-block">
-<span class="keyword">public class</span> HelloWorld {
+            <div class="code-block"><span class="keyword">public class</span> HelloWorld {
     <span class="keyword">public static void</span> main(String[] args) {
         System.<span class="keyword">out</span>.println(<span class="string">"Hallo, Welt!"</span>);
     }
-}
-            </div>
+}</div>
             
             <div class="important">
                 <strong>⚠️ Wichtig:</strong> Speichere die Datei mit dem exakten Klassennamen: <strong>HelloWorld.java</strong>
@@ -439,19 +441,17 @@
             </table>
             
             <h3>Variablendeklations-Beispiel</h3>
-            <div class="code-block">
-<span class="keyword">public class</span> Variablen {
+            <div class="code-block"><span class="keyword">public class</span> Variablen {
     <span class="keyword">public static void</span> main(String[] args) {
         <span class="keyword">int</span> alter = <span class="number">20</span>;
         <span class="keyword">String</span> name = <span class="string">"Alice"</span>;
         <span class="keyword">double</span> gpa = <span class="number">3.85</span>;
         <span class="keyword">boolean</span> istAktiv = <span class="keyword">true</span>;
-        
+
         System.<span class="keyword">out</span>.println(<span class="string">"Name: "</span> + name);
         System.<span class="keyword">out</span>.println(<span class="string">"Alter: "</span> + alter);
     }
-}
-            </div>
+}</div>
             
             <h3>Operatoren</h3>
             <ul class="feature-list">
@@ -462,20 +462,18 @@
             </ul>
             
             <h3>Benutzer-Eingabe</h3>
-            <div class="code-block">
-<span class="keyword">import</span> java.util.Scanner;
+            <div class="code-block"><span class="keyword">import</span> java.util.Scanner;
 
 <span class="keyword">public class</span> BenutzerEingabe {
     <span class="keyword">public static void</span> main(String[] args) {
         Scanner scanner = <span class="keyword">new</span> Scanner(System.<span class="keyword">in</span>);
-        
+
         System.<span class="keyword">out</span>.print(<span class="string">"Gib deinen Namen ein: "</span>);
         String name = scanner.nextLine();
-        
+
         System.<span class="keyword">out</span>.println(<span class="string">"Hallo, "</span> + name);
     }
-}
-            </div>
+}</div>
         </section>
         
         <!-- MODUL 3: KONTROLLSTRUKTUREN -->
@@ -485,8 +483,7 @@
             <h3>If-Else-Anweisung</h3>
             <p>Nutze if-else, um Entscheidungen in deinem Programm zu treffen.</p>
             
-            <div class="code-block">
-<span class="keyword">int</span> punktzahl = <span class="number">85</span>;
+            <div class="code-block"><span class="keyword">int</span> punktzahl = <span class="number">85</span>;
 
 <span class="keyword">if</span> (punktzahl >= <span class="number">90</span>) {
     System.<span class="keyword">out</span>.println(<span class="string">"Note: 1"</span>);
@@ -496,12 +493,10 @@
     System.<span class="keyword">out</span>.println(<span class="string">"Note: 3"</span>);
 } <span class="keyword">else</span> {
     System.<span class="keyword">out</span>.println(<span class="string">"Note: 5"</span>);
-}
-            </div>
+}</div>
             
             <h3>Switch-Anweisung</h3>
-            <div class="code-block">
-<span class="keyword">int</span> tag = <span class="number">3</span>;
+            <div class="code-block"><span class="keyword">int</span> tag = <span class="number">3</span>;
 <span class="keyword">String</span> tagName;
 
 <span class="keyword">switch</span> (tag) {
@@ -516,36 +511,29 @@
         <span class="keyword">break</span>;
     <span class="keyword">default</span>:
         tagName = <span class="string">"Unbekannt"</span>;
-}
-            </div>
+}</div>
             
             <h3>Schleifen</h3>
             
             <h4>For-Schleife</h4>
-            <div class="code-block">
-<span class="comment">// Gib die Zahlen 1 bis 10 aus</span>
+            <div class="code-block"><span class="comment">// Gib die Zahlen 1 bis 10 aus</span>
 <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i <= <span class="number">10</span>; i++) {
     System.<span class="keyword">out</span>.println(i);
-}
-            </div>
+}</div>
             
             <h4>While-Schleife</h4>
-            <div class="code-block">
-<span class="keyword">int</span> zaehler = <span class="number">1</span>;
+            <div class="code-block"><span class="keyword">int</span> zaehler = <span class="number">1</span>;
 <span class="keyword">while</span> (zaehler <= <span class="number">5</span>) {
     System.<span class="keyword">out</span>.println(<span class="string">"Zaehler: "</span> + zaehler);
     zaehler++;
-}
-            </div>
+}</div>
             
             <h4>Do-While-Schleife</h4>
-            <div class="code-block">
-<span class="keyword">int</span> num = <span class="number">1</span>;
+            <div class="code-block"><span class="keyword">int</span> num = <span class="number">1</span>;
 <span class="keyword">do</span> {
     System.<span class="keyword">out</span>.println(num);
     num++;
-} <span class="keyword">while</span> (num <= <span class="number">5</span>);
-            </div>
+} <span class="keyword">while</span> (num <= <span class="number">5</span>);</div>
         </section>
         
         <!-- MODUL 4: METHODEN -->
@@ -555,49 +543,41 @@
             <p>Methoden sind wiederverwendbare Codeblöcke, die spezifische Aufgaben ausführen.</p>
             
             <h3>Methodenstruktur</h3>
-            <div class="code-block">
-<span class="keyword">public static</span> &lt;Rückgabewert&gt; methodenName(parameter) {
+            <div class="code-block"><span class="keyword">public static</span> &lt;Rückgabewert&gt; methodenName(parameter) {
     <span class="comment">// Methodenkörper</span>
     <span class="keyword">return</span> wert;
-}
-            </div>
+}</div>
             
             <h3>Beispiele</h3>
             
             <h4>Methode ohne Parameter</h4>
-            <div class="code-block">
-<span class="keyword">public static void</span> gruessen() {
+            <div class="code-block"><span class="keyword">public static void</span> gruessen() {
     System.<span class="keyword">out</span>.println(<span class="string">"Hallo!"</span>);
 }
 
 <span class="keyword">public static void</span> main(String[] args) {
     gruessen(); <span class="comment">// Methode aufrufen</span>
-}
-            </div>
+}</div>
             
             <h4>Methode mit Parametern und Rückgabewert</h4>
-            <div class="code-block">
-<span class="keyword">public static int</span> addieren(<span class="keyword">int</span> a, <span class="keyword">int</span> b) {
+            <div class="code-block"><span class="keyword">public static int</span> addieren(<span class="keyword">int</span> a, <span class="keyword">int</span> b) {
     <span class="keyword">return</span> a + b;
 }
 
 <span class="keyword">public static void</span> main(String[] args) {
     <span class="keyword">int</span> ergebnis = addieren(<span class="number">5</span>, <span class="number">3</span>);
     System.<span class="keyword">out</span>.println(<span class="string">"Summe: "</span> + ergebnis);
-}
-            </div>
+}</div>
             
             <h4>Methoden-Überladung</h4>
             <p>Methoden können denselben Namen haben, aber unterschiedliche Parameter.</p>
-            <div class="code-block">
-<span class="keyword">public static int</span> multiplizieren(<span class="keyword">int</span> a, <span class="keyword">int</span> b) {
+            <div class="code-block"><span class="keyword">public static int</span> multiplizieren(<span class="keyword">int</span> a, <span class="keyword">int</span> b) {
     <span class="keyword">return</span> a * b;
 }
 
 <span class="keyword">public static double</span> multiplizieren(<span class="keyword">double</span> a, <span class="keyword">double</span> b) {
     <span class="keyword">return</span> a * b;
-}
-            </div>
+}</div>
         </section>
         
         <!-- MODUL 5: ARRAYS UND SAMMLUNGEN -->
@@ -608,8 +588,7 @@
             <p>Arrays speichern mehrere Werte desselben Typs in einer einzelnen Variablen.</p>
             
             <h4>Array-Deklaration und Initialisierung</h4>
-            <div class="code-block">
-<span class="comment">// Methode 1: Deklariere und initialisiere mit Werten</span>
+            <div class="code-block"><span class="comment">// Methode 1: Deklariere und initialisiere mit Werten</span>
 <span class="keyword">int</span>[] zahlen = {<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="number">40</span>};
 
 <span class="comment">// Methode 2: Deklariere und initialisiere mit Größe</span>
@@ -617,12 +596,10 @@
 
 <span class="comment">// Auf Elemente zugreifen</span>
 System.<span class="keyword">out</span>.println(zahlen[<span class="number">0</span>]); <span class="comment">// Output: 10</span>
-namen[<span class="number">0</span>] = <span class="string">"Alice"</span>;
-            </div>
+namen[<span class="number">0</span>] = <span class="string">"Alice"</span>;</div>
             
             <h4>Durchlaufe Arrays</h4>
-            <div class="code-block">
-<span class="keyword">int</span>[] noten = {<span class="number">85</span>, <span class="number">90</span>, <span class="number">78</span>, <span class="number">92</span>};
+            <div class="code-block"><span class="keyword">int</span>[] noten = {<span class="number">85</span>, <span class="number">90</span>, <span class="number">78</span>, <span class="number">92</span>};
 
 <span class="comment">// Mit for-Schleife</span>
 <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i < noten.length; i++) {
@@ -632,32 +609,29 @@ namen[<span class="number">0</span>] = <span class="string">"Alice"</span>;
 <span class="comment">// Mit erweiterte for-Schleife</span>
 <span class="keyword">for</span> (<span class="keyword">int</span> note : noten) {
     System.<span class="keyword">out</span>.println(note);
-}
-            </div>
+}</div>
             
             <h3>ArrayList</h3>
             <p>ArrayList ist ein dynamisches Array, das wachsen oder schrumpfen kann.</p>
             
-            <div class="code-block">
-<span class="keyword">import</span> java.util.ArrayList;
+            <div class="code-block"><span class="keyword">import</span> java.util.ArrayList;
 
 <span class="keyword">public class</span> ArrayListBeispiel {
     <span class="keyword">public static void</span> main(String[] args) {
         ArrayList&lt;String&gt; frueechte = <span class="keyword">new</span> ArrayList&lt;&gt;();
-        
+
         frueechte.add(<span class="string">"Apfel"</span>);
         frueechte.add(<span class="string">"Banane"</span>);
         frueechte.add(<span class="string">"Orange"</span>);
-        
+
         System.<span class="keyword">out</span>.println(frueechte.get(<span class="number">0</span>)); <span class="comment">// Apfel</span>
         System.<span class="keyword">out</span>.println(frueechte.size()); <span class="comment">// 3</span>
-        
+
         <span class="keyword">for</span> (String frucht : frueechte) {
             System.<span class="keyword">out</span>.println(frucht);
         }
     }
-}
-            </div>
+}</div>
         </section>
         
         <!-- MODUL 6: OOP -->
@@ -669,29 +643,28 @@ namen[<span class="number">0</span>] = <span class="string">"Alice"</span>;
             <h3>Klassen und Objekte</h3>
             <p>Eine Klasse ist ein Blueprint für die Erstellung von Objekten. Ein Objekt ist eine Instanz einer Klasse.</p>
             
-            <div class="code-block">
-<span class="keyword">public class</span> Schueler {
+            <div class="code-block"><span class="keyword">public class</span> Schueler {
     <span class="comment">// Attribute (Eigenschaften)</span>
     <span class="keyword">private</span> String name;
     <span class="keyword">private</span> <span class="keyword">int</span> alter;
     <span class="keyword">private</span> <span class="keyword">double</span> gpa;
-    
+
     <span class="comment">// Konstruktor</span>
     <span class="keyword">public</span> Schueler(String name, <span class="keyword">int</span> alter, <span class="keyword">double</span> gpa) {
         <span class="keyword">this</span>.name = name;
         <span class="keyword">this</span>.alter = alter;
         <span class="keyword">this</span>.gpa = gpa;
     }
-    
+
     <span class="comment">// Getter und Setter Methoden</span>
     <span class="keyword">public</span> String getName() {
         <span class="keyword">return</span> name;
     }
-    
+
     <span class="keyword">public void</span> setName(String name) {
         <span class="keyword">this</span>.name = name;
     }
-    
+
     <span class="comment">// Reguläre Methode</span>
     <span class="keyword">public void</span> zeigeInfo() {
         System.<span class="keyword">out</span>.println(<span class="string">"Name: "</span> + name + <span class="string">", Alter: "</span> + alter);
@@ -700,8 +673,7 @@ namen[<span class="number">0</span>] = <span class="string">"Alice"</span>;
 
 <span class="comment">// Objekte erstellen</span>
 Schueler schueler1 = <span class="keyword">new</span> Schueler(<span class="string">"Alice"</span>, <span class="number">20</span>, <span class="number">3.85</span>);
-schueler1.zeigeInfo();
-            </div>
+schueler1.zeigeInfo();</div>
             
             <h3>Die vier Säulen der OOP</h3>
             
@@ -718,10 +690,9 @@ schueler1.zeigeInfo();
             
             <h4>2. Vererbung (Inheritance)</h4>
             <p>Erstelle eine neue Klasse, indem du Eigenschaften und Methoden von einer vorhandenen Klasse erbst.</p>
-            <div class="code-block">
-<span class="keyword">public class</span> Person {
+            <div class="code-block"><span class="keyword">public class</span> Person {
     <span class="keyword">protected</span> String name;
-    
+
     <span class="keyword">public void</span> gruessen() {
         System.<span class="keyword">out</span>.println(<span class="string">"Hallo, ich bin "</span> + name);
     }
@@ -729,22 +700,20 @@ schueler1.zeigeInfo();
 
 <span class="keyword">public class</span> Lehrer <span class="keyword">extends</span> Person {
     <span class="keyword">private</span> String fach;
-    
+
     <span class="keyword">public</span> Lehrer(String name, String fach) {
         <span class="keyword">this</span>.name = name;
         <span class="keyword">this</span>.fach = fach;
     }
-    
+
     <span class="keyword">public void</span> unterrichten() {
         System.<span class="keyword">out</span>.println(<span class="string">"Unterrichte "</span> + fach);
     }
-}
-            </div>
+}</div>
             
             <h4>3. Polymorphismus (Polymorphism)</h4>
             <p>Die Fähigkeit, ein Objekt in mehreren Formen zu verwenden.</p>
-            <div class="code-block">
-<span class="keyword">public class</span> Tier {
+            <div class="code-block"><span class="keyword">public class</span> Tier {
     <span class="keyword">public void</span> laut() {
         System.<span class="keyword">out</span>.println(<span class="string">"Ein Laut"</span>);
     }
@@ -762,13 +731,11 @@ schueler1.zeigeInfo();
     <span class="keyword">public void</span> laut() {
         System.<span class="keyword">out</span>.println(<span class="string">"Miau!"</span>);
     }
-}
-            </div>
+}</div>
             
             <h4>4. Abstraktion (Abstraction)</h4>
             <p>Verbergen komplexer Implementierungsdetails und Zeigen nur der wesentlichen Funktionen.</p>
-            <div class="code-block">
-<span class="keyword">abstract public class</span> Fahrzeug {
+            <div class="code-block"><span class="keyword">abstract public class</span> Fahrzeug {
     <span class="keyword">abstract public void</span> starten();
     <span class="keyword">abstract public void</span> stoppen();
 }
@@ -778,13 +745,12 @@ schueler1.zeigeInfo();
     <span class="keyword">public void</span> starten() {
         System.<span class="keyword">out</span>.println(<span class="string">"Auto-Motor gestartet"</span>);
     }
-    
+
     @<span class="keyword">Override</span>
     <span class="keyword">public void</span> stoppen() {
         System.<span class="keyword">out</span>.println(<span class="string">"Auto gestoppt"</span>);
     }
-}
-            </div>
+}</div>
         </section>
         
         <!-- ÜBUNGEN -->

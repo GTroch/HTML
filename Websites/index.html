@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beginner Java Course</title>
+    <title>Anfänger-Java-Kurs</title>
     <style>
         * {
             margin: 0;
@@ -12,10 +12,10 @@
         }
         
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Segoe UI', 'Trebuchet MS', sans-serif;
+            line-height: 1.7;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #1a3a52 0%, #2d5a7b 100%);
             min-height: 100vh;
         }
         
@@ -27,31 +27,37 @@
         
         header {
             background: white;
-            padding: 40px 20px;
-            border-radius: 10px;
-            margin-bottom: 30px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            padding: 50px 30px;
+            border-radius: 8px;
+            margin-bottom: 35px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
             text-align: center;
+            border-top: 5px solid #d4af37;
+            animation: slideDown 0.7s ease-out;
         }
         
         h1 {
-            color: #667eea;
-            margin-bottom: 10px;
-            font-size: 2.5em;
+            color: #1a3a52;
+            margin-bottom: 12px;
+            font-size: 2.8em;
+            font-weight: 700;
+            letter-spacing: -0.5px;
         }
         
         .subtitle {
             color: #666;
-            font-size: 1.1em;
+            font-size: 1.15em;
+            font-weight: 300;
         }
         
         nav {
             background: white;
             padding: 0;
-            border-radius: 10px;
-            margin-bottom: 30px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin-bottom: 35px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
             overflow: hidden;
+            animation: slideUp 0.7s ease-out;
         }
         
         nav ul {
@@ -63,17 +69,19 @@
         
         nav a {
             display: block;
-            padding: 15px 20px;
-            color: #667eea;
+            padding: 18px 22px;
+            color: #1a3a52;
             text-decoration: none;
-            border-right: 1px solid #eee;
-            transition: background 0.3s;
-            font-weight: 500;
+            border-right: 2px solid #ecf0f1;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            font-size: 0.95em;
         }
         
         nav a:hover {
-            background: #f0f0f0;
-            color: #764ba2;
+            background: #f8f9fa;
+            color: #d4af37;
+            border-bottom: 3px solid #d4af37;
         }
         
         nav li:last-child a {
@@ -82,125 +90,207 @@
         
         .module {
             background: white;
-            padding: 30px;
-            margin-bottom: 25px;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+            border-left: 5px solid #d4af37;
+            animation: fadeIn 0.8s ease-out;
         }
         
         .module h2 {
-            color: #667eea;
-            margin-bottom: 20px;
-            font-size: 1.8em;
-            border-bottom: 3px solid #764ba2;
-            padding-bottom: 10px;
+            color: #1a3a52;
+            margin-bottom: 25px;
+            font-size: 1.9em;
+            border-bottom: 2px solid #d4af37;
+            padding-bottom: 12px;
+            font-weight: 700;
         }
         
         .module h3 {
-            color: #764ba2;
-            margin-top: 20px;
-            margin-bottom: 10px;
-            font-size: 1.2em;
+            color: #2d5a7b;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+            font-weight: 600;
         }
         
         .code-block {
-            background: #2d2d2d;
-            color: #f8f8f2;
-            padding: 15px;
-            border-radius: 5px;
+            background: #1e1e1e;
+            color: #e8e8e8;
+            padding: 18px;
+            border-radius: 6px;
             overflow-x: auto;
-            margin: 15px 0;
+            margin: 18px 0;
             font-family: 'Courier New', monospace;
             font-size: 0.95em;
-            border-left: 4px solid #667eea;
+            border-left: 4px solid #d4af37;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
         
-        .keyword { color: #ff79c6; }
-        .string { color: #f1fa8c; }
-        .number { color: #bd93f9; }
-        .comment { color: #6272a4; }
+        .code-block:hover {
+            transform: translateX(3px);
+            box-shadow: 0 6px 16px rgba(212, 175, 55, 0.15);
+        }
+        
+        .keyword { color: #e8b971; }
+        .string { color: #7ec699; }
+        .number { color: #9fb5f0; }
+        .comment { color: #7f8c8d; }
         
         .feature-list {
-            background: #f9f9f9;
-            padding: 15px 30px;
-            border-radius: 5px;
-            margin: 15px 0;
-            border-left: 4px solid #667eea;
+            background: #f0f4f8;
+            padding: 18px 35px;
+            border-radius: 6px;
+            margin: 18px 0;
+            border-left: 4px solid #2d5a7b;
         }
         
         .feature-list li {
-            margin: 8px 0;
+            margin: 10px 0;
             list-style-position: inside;
+            color: #2c3e50;
         }
         
         .box {
-            background: #e8f4ff;
-            padding: 15px;
-            border-radius: 5px;
-            margin: 15px 0;
-            border-left: 4px solid #667eea;
+            background: #e8f4f8;
+            padding: 18px;
+            border-radius: 6px;
+            margin: 18px 0;
+            border-left: 4px solid #2d5a7b;
         }
         
         .important {
-            background: #fff3cd;
-            padding: 15px;
-            border-radius: 5px;
-            margin: 15px 0;
-            border-left: 4px solid #ff9800;
+            background: #fff8e1;
+            padding: 18px;
+            border-radius: 6px;
+            margin: 18px 0;
+            border-left: 4px solid #f39c12;
         }
         
         .exercise {
-            background: #f0f7ff;
-            padding: 20px;
-            border-radius: 5px;
-            margin: 20px 0;
-            border-left: 4px solid #4caf50;
+            background: #f0f8ff;
+            padding: 22px;
+            border-radius: 6px;
+            margin: 22px 0;
+            border-left: 5px solid #27ae60;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+        
+        .exercise:hover {
+            box-shadow: 0 6px 18px rgba(39, 174, 96, 0.15);
+            transform: translateY(-2px);
+            border-left-color: #2ecc71;
         }
         
         .exercise h4 {
-            color: #4caf50;
-            margin-bottom: 10px;
+            color: #27ae60;
+            margin-bottom: 12px;
+            font-size: 1.1em;
+            font-weight: 600;
         }
         
         .homework {
-            background: #fff3e0;
-            padding: 20px;
-            border-radius: 5px;
-            margin: 20px 0;
-            border-left: 4px solid #ff9800;
+            background: #fff9e6;
+            padding: 22px;
+            border-radius: 6px;
+            margin: 22px 0;
+            border-left: 5px solid #f39c12;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+        
+        .homework:hover {
+            box-shadow: 0 6px 18px rgba(243, 156, 18, 0.15);
+            transform: translateY(-2px);
+            border-left-color: #f1c40f;
         }
         
         .homework h4 {
-            color: #ff9800;
-            margin-bottom: 10px;
+            color: #d68910;
+            margin-bottom: 12px;
+            font-size: 1.1em;
+            font-weight: 600;
         }
         
         table {
             width: 100%;
             border-collapse: collapse;
-            margin: 15px 0;
+            margin: 18px 0;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
         }
         
         table th, table td {
-            padding: 12px;
+            padding: 15px;
             text-align: left;
-            border-bottom: 1px solid #ddd;
+            border-bottom: 1px solid #ecf0f1;
         }
         
         table th {
-            background: #667eea;
-            color: white;
+            background: linear-gradient(135deg, #1a3a52 0%, #2d5a7b 100%);
+            color: #d4af37;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9em;
+            letter-spacing: 0.5px;
         }
         
-        table tr:hover {
-            background: #f5f5f5;
+        table tbody tr:hover {
+            background: #f0f4f8;
+            transition: background 0.3s ease;
+        }
+        
+        table tbody tr:nth-child(even) {
+            background: #f8f9fa;
         }
         
         footer {
             text-align: center;
-            padding: 20px;
-            color: white;
-            margin-top: 40px;
+            padding: 30px;
+            color: #ecf0f1;
+            margin-top: 50px;
+            font-weight: 300;
+            font-size: 0.9em;
+        }
+        
+        /* Animations */
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         
         @media (max-width: 768px) {
@@ -210,7 +300,8 @@
             
             nav a {
                 border-right: none;
-                border-bottom: 1px solid #eee;
+                border-bottom: 1px solid #ecf0f1;
+                padding: 15px 18px;
             }
             
             nav li:last-child a {
@@ -218,7 +309,34 @@
             }
             
             h1 {
-                font-size: 1.8em;
+                font-size: 2em;
+            }
+            
+            .module {
+                padding: 25px;
+            }
+            
+            .container {
+                padding: 15px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.6em;
+            }
+            
+            .module h2 {
+                font-size: 1.4em;
+            }
+            
+            .code-block {
+                font-size: 0.85em;
+                padding: 12px;
+            }
+            
+            .module {
+                padding: 15px;
             }
         }
     </style>
@@ -226,201 +344,201 @@
 <body>
     <div class="container">
         <header>
-            <h1>☕ Beginner Java Course</h1>
-            <p class="subtitle">Learn Java from Basics to Object-Oriented Programming</p>
+            <h1>☕ Anfänger-Java-Kurs</h1>
+            <p class="subtitle">Lerne Java von den Grundlagen bis zur objektorientierten Programmierung</p>
         </header>
         
         <nav>
             <ul>
                 <li><a href="#setup">Setup</a></li>
-                <li><a href="#basics">Basics</a></li>
-                <li><a href="#control">Control Flow</a></li>
-                <li><a href="#methods">Methods</a></li>
+                <li><a href="#basics">Grundlagen</a></li>
+                <li><a href="#control">Kontrollstrukturen</a></li>
+                <li><a href="#methods">Methoden</a></li>
                 <li><a href="#arrays">Arrays</a></li>
                 <li><a href="#oop">OOP</a></li>
-                <li><a href="#practice">Practice</a></li>
-                <li><a href="#homework">Homework</a></li>
+                <li><a href="#practice">Übungen</a></li>
+                <li><a href="#homework">Hausaufgaben</a></li>
             </ul>
         </nav>
         
-        <!-- MODULE 1: SETUP -->
+        <!-- MODUL 1: SETUP -->
         <section id="setup" class="module">
-            <h2>1. Getting Started with Java</h2>
+            <h2>1. Erste Schritte mit Java</h2>
             
-            <h3>Installation & Setup</h3>
-            <p>Before you start coding, you need to download and install the Java Development Kit (JDK).</p>
+            <h3>Installation & Einrichtung</h3>
+            <p>Bevor du mit dem Programmieren beginnst, musst du das Java Development Kit (JDK) herunterladen und installieren.</p>
             
             <div class="box">
-                <strong>Steps to Install:</strong>
+                <strong>Installationsschritte:</strong>
                 <ol style="margin-left: 20px; margin-top: 10px;">
-                    <li>Download JDK from <a href="https://www.oracle.com/java/technologies/downloads/" target="_blank">Oracle's official website</a></li>
-                    <li>Run the installer and follow the instructions</li>
-                    <li>Set up the JAVA_HOME environment variable</li>
-                    <li>Verify installation by opening Command Prompt and typing: <code>java -version</code></li>
+                    <li>Lade das JDK von der <a href="https://www.oracle.com/java/technologies/downloads/" target="_blank">offiziellen Oracle-Website</a> herunter</li>
+                    <li>Führe das Installationsprogramm aus und folge den Anweisungen</li>
+                    <li>Richte die JAVA_HOME-Umgebungsvariable ein</li>
+                    <li>Überprüfe die Installation, indem du die Eingabeaufforderung öffnest und eingibst: <code>java -version</code></li>
                 </ol>
             </div>
             
-            <h3>Your First Java Program</h3>
+            <h3>Dein erstes Java-Programm</h3>
             <div class="code-block">
 <span class="keyword">public class</span> HelloWorld {
     <span class="keyword">public static void</span> main(String[] args) {
-        System.<span class="keyword">out</span>.println(<span class="string">"Hello, World!"</span>);
+        System.<span class="keyword">out</span>.println(<span class="string">"Hallo, Welt!"</span>);
     }
 }
             </div>
             
             <div class="important">
-                <strong>⚠️ Important:</strong> Save the file with the exact class name: <strong>HelloWorld.java</strong>
+                <strong>⚠️ Wichtig:</strong> Speichere die Datei mit dem exakten Klassennamen: <strong>HelloWorld.java</strong>
             </div>
         </section>
         
-        <!-- MODULE 2: BASICS -->
+        <!-- MODUL 2: GRUNDLAGEN -->
         <section id="basics" class="module">
-            <h2>2. Java Basics</h2>
+            <h2>2. Java-Grundlagen</h2>
             
-            <h3>Variables and Data Types</h3>
-            <p>Variables are containers that store values. Java is a strongly typed language, so every variable must have a data type.</p>
+            <h3>Variablen und Datentypen</h3>
+            <p>Variablen sind Container, die Werte speichern. Java ist eine stark typisierte Sprache, daher muss jede Variable einen Datentyp haben.</p>
             
             <table>
                 <tr>
-                    <th>Data Type</th>
-                    <th>Size</th>
-                    <th>Description</th>
-                    <th>Example</th>
+                    <th>Datentyp</th>
+                    <th>Größe</th>
+                    <th>Beschreibung</th>
+                    <th>Beispiel</th>
                 </tr>
                 <tr>
                     <td>int</td>
-                    <td>4 bytes</td>
-                    <td>Whole numbers</td>
-                    <td>int age = 25;</td>
+                    <td>4 Bytes</td>
+                    <td>Ganze Zahlen</td>
+                    <td>int alter = 25;</td>
                 </tr>
                 <tr>
                     <td>double</td>
-                    <td>8 bytes</td>
-                    <td>Decimal numbers</td>
-                    <td>double height = 5.9;</td>
+                    <td>8 Bytes</td>
+                    <td>Dezimalzahlen</td>
+                    <td>double hoehe = 5.9;</td>
                 </tr>
                 <tr>
                     <td>String</td>
                     <td>Variable</td>
                     <td>Text</td>
-                    <td>String name = "John";</td>
+                    <td>String name = "Julia";</td>
                 </tr>
                 <tr>
                     <td>boolean</td>
-                    <td>1 bit</td>
-                    <td>True or False</td>
-                    <td>boolean isStudent = true;</td>
+                    <td>1 Bit</td>
+                    <td>Wahr oder Falsch</td>
+                    <td>boolean istSchueler = true;</td>
                 </tr>
                 <tr>
                     <td>char</td>
-                    <td>2 bytes</td>
-                    <td>Single character</td>
-                    <td>char grade = 'A';</td>
+                    <td>2 Bytes</td>
+                    <td>Einzelnes Zeichen</td>
+                    <td>char note = 'A';</td>
                 </tr>
             </table>
             
-            <h3>Variable Declaration Example</h3>
+            <h3>Variablendeklations-Beispiel</h3>
             <div class="code-block">
-<span class="keyword">public class</span> Variables {
+<span class="keyword">public class</span> Variablen {
     <span class="keyword">public static void</span> main(String[] args) {
-        <span class="keyword">int</span> age = <span class="number">20</span>;
+        <span class="keyword">int</span> alter = <span class="number">20</span>;
         <span class="keyword">String</span> name = <span class="string">"Alice"</span>;
         <span class="keyword">double</span> gpa = <span class="number">3.85</span>;
-        <span class="keyword">boolean</span> isActive = <span class="keyword">true</span>;
+        <span class="keyword">boolean</span> istAktiv = <span class="keyword">true</span>;
         
         System.<span class="keyword">out</span>.println(<span class="string">"Name: "</span> + name);
-        System.<span class="keyword">out</span>.println(<span class="string">"Age: "</span> + age);
+        System.<span class="keyword">out</span>.println(<span class="string">"Alter: "</span> + alter);
     }
 }
             </div>
             
-            <h3>Operators</h3>
+            <h3>Operatoren</h3>
             <ul class="feature-list">
-                <li><strong>Arithmetic:</strong> +, -, *, /, %</li>
-                <li><strong>Comparison:</strong> ==, !=, &gt;, &lt;, &gt;=, &lt;=</li>
-                <li><strong>Logical:</strong> &&, ||, !</li>
-                <li><strong>Assignment:</strong> =, +=, -=, *=, /=</li>
+                <li><strong>Arithmetisch:</strong> +, -, *, /, %</li>
+                <li><strong>Vergleich:</strong> ==, !=, &gt;, &lt;, &gt;=, &lt;=</li>
+                <li><strong>Logisch:</strong> &&, ||, !</li>
+                <li><strong>Zuweisung:</strong> =, +=, -=, *=, /=</li>
             </ul>
             
-            <h3>Input from User</h3>
+            <h3>Benutzer-Eingabe</h3>
             <div class="code-block">
 <span class="keyword">import</span> java.util.Scanner;
 
-<span class="keyword">public class</span> UserInput {
+<span class="keyword">public class</span> BenutzerEingabe {
     <span class="keyword">public static void</span> main(String[] args) {
         Scanner scanner = <span class="keyword">new</span> Scanner(System.<span class="keyword">in</span>);
         
-        System.<span class="keyword">out</span>.print(<span class="string">"Enter your name: "</span>);
+        System.<span class="keyword">out</span>.print(<span class="string">"Gib deinen Namen ein: "</span>);
         String name = scanner.nextLine();
         
-        System.<span class="keyword">out</span>.println(<span class="string">"Hello, "</span> + name);
+        System.<span class="keyword">out</span>.println(<span class="string">"Hallo, "</span> + name);
     }
 }
             </div>
         </section>
         
-        <!-- MODULE 3: CONTROL FLOW -->
+        <!-- MODUL 3: KONTROLLSTRUKTUREN -->
         <section id="control" class="module">
-            <h2>3. Control Flow Statements</h2>
+            <h2>3. Kontrollstrukturen</h2>
             
-            <h3>If-Else Statement</h3>
-            <p>Use if-else to make decisions in your program.</p>
+            <h3>If-Else-Anweisung</h3>
+            <p>Nutze if-else, um Entscheidungen in deinem Programm zu treffen.</p>
             
             <div class="code-block">
-<span class="keyword">int</span> score = <span class="number">85</span>;
+<span class="keyword">int</span> punktzahl = <span class="number">85</span>;
 
-<span class="keyword">if</span> (score >= <span class="number">90</span>) {
-    System.<span class="keyword">out</span>.println(<span class="string">"Grade: A"</span>);
-} <span class="keyword">else if</span> (score >= <span class="number">80</span>) {
-    System.<span class="keyword">out</span>.println(<span class="string">"Grade: B"</span>);
-} <span class="keyword">else if</span> (score >= <span class="number">70</span>) {
-    System.<span class="keyword">out</span>.println(<span class="string">"Grade: C"</span>);
+<span class="keyword">if</span> (punktzahl >= <span class="number">90</span>) {
+    System.<span class="keyword">out</span>.println(<span class="string">"Note: 1"</span>);
+} <span class="keyword">else if</span> (punktzahl >= <span class="number">80</span>) {
+    System.<span class="keyword">out</span>.println(<span class="string">"Note: 2"</span>);
+} <span class="keyword">else if</span> (punktzahl >= <span class="number">70</span>) {
+    System.<span class="keyword">out</span>.println(<span class="string">"Note: 3"</span>);
 } <span class="keyword">else</span> {
-    System.<span class="keyword">out</span>.println(<span class="string">"Grade: F"</span>);
+    System.<span class="keyword">out</span>.println(<span class="string">"Note: 5"</span>);
 }
             </div>
             
-            <h3>Switch Statement</h3>
+            <h3>Switch-Anweisung</h3>
             <div class="code-block">
-<span class="keyword">int</span> day = <span class="number">3</span>;
-<span class="keyword">String</span> dayName;
+<span class="keyword">int</span> tag = <span class="number">3</span>;
+<span class="keyword">String</span> tagName;
 
-<span class="keyword">switch</span> (day) {
+<span class="keyword">switch</span> (tag) {
     <span class="keyword">case</span> <span class="number">1</span>:
-        dayName = <span class="string">"Monday"</span>;
+        tagName = <span class="string">"Montag"</span>;
         <span class="keyword">break</span>;
     <span class="keyword">case</span> <span class="number">2</span>:
-        dayName = <span class="string">"Tuesday"</span>;
+        tagName = <span class="string">"Dienstag"</span>;
         <span class="keyword">break</span>;
     <span class="keyword">case</span> <span class="number">3</span>:
-        dayName = <span class="string">"Wednesday"</span>;
+        tagName = <span class="string">"Mittwoch"</span>;
         <span class="keyword">break</span>;
     <span class="keyword">default</span>:
-        dayName = <span class="string">"Unknown"</span>;
+        tagName = <span class="string">"Unbekannt"</span>;
 }
             </div>
             
-            <h3>Loops</h3>
+            <h3>Schleifen</h3>
             
-            <h4>For Loop</h4>
+            <h4>For-Schleife</h4>
             <div class="code-block">
-<span class="comment">// Print numbers 1 to 10</span>
+<span class="comment">// Gib die Zahlen 1 bis 10 aus</span>
 <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i <= <span class="number">10</span>; i++) {
     System.<span class="keyword">out</span>.println(i);
 }
             </div>
             
-            <h4>While Loop</h4>
+            <h4>While-Schleife</h4>
             <div class="code-block">
-<span class="keyword">int</span> count = <span class="number">1</span>;
-<span class="keyword">while</span> (count <= <span class="number">5</span>) {
-    System.<span class="keyword">out</span>.println(<span class="string">"Count: "</span> + count);
-    count++;
+<span class="keyword">int</span> zaehler = <span class="number">1</span>;
+<span class="keyword">while</span> (zaehler <= <span class="number">5</span>) {
+    System.<span class="keyword">out</span>.println(<span class="string">"Zaehler: "</span> + zaehler);
+    zaehler++;
 }
             </div>
             
-            <h4>Do-While Loop</h4>
+            <h4>Do-While-Schleife</h4>
             <div class="code-block">
 <span class="keyword">int</span> num = <span class="number">1</span>;
 <span class="keyword">do</span> {
@@ -430,142 +548,142 @@
             </div>
         </section>
         
-        <!-- MODULE 4: METHODS -->
+        <!-- MODUL 4: METHODEN -->
         <section id="methods" class="module">
-            <h2>4. Methods (Functions)</h2>
+            <h2>4. Methoden (Funktionen)</h2>
             
-            <p>Methods are reusable blocks of code that perform specific tasks.</p>
+            <p>Methoden sind wiederverwendbare Codeblöcke, die spezifische Aufgaben ausführen.</p>
             
-            <h3>Method Structure</h3>
+            <h3>Methodenstruktur</h3>
             <div class="code-block">
-<span class="keyword">public static</span> &lt;return_type&gt; methodName(parameters) {
-    <span class="comment">// Method body</span>
-    <span class="keyword">return</span> value;
+<span class="keyword">public static</span> &lt;Rückgabewert&gt; methodenName(parameter) {
+    <span class="comment">// Methodenkörper</span>
+    <span class="keyword">return</span> wert;
 }
             </div>
             
-            <h3>Examples</h3>
+            <h3>Beispiele</h3>
             
-            <h4>Method with No Parameters</h4>
+            <h4>Methode ohne Parameter</h4>
             <div class="code-block">
-<span class="keyword">public static void</span> greet() {
-    System.<span class="keyword">out</span>.println(<span class="string">"Hello!"</span>);
+<span class="keyword">public static void</span> gruessen() {
+    System.<span class="keyword">out</span>.println(<span class="string">"Hallo!"</span>);
 }
 
 <span class="keyword">public static void</span> main(String[] args) {
-    greet(); <span class="comment">// Calling the method</span>
+    gruessen(); <span class="comment">// Methode aufrufen</span>
 }
             </div>
             
-            <h4>Method with Parameters and Return Value</h4>
+            <h4>Methode mit Parametern und Rückgabewert</h4>
             <div class="code-block">
-<span class="keyword">public static int</span> add(<span class="keyword">int</span> a, <span class="keyword">int</span> b) {
+<span class="keyword">public static int</span> addieren(<span class="keyword">int</span> a, <span class="keyword">int</span> b) {
     <span class="keyword">return</span> a + b;
 }
 
 <span class="keyword">public static void</span> main(String[] args) {
-    <span class="keyword">int</span> result = add(<span class="number">5</span>, <span class="number">3</span>);
-    System.<span class="keyword">out</span>.println(<span class="string">"Sum: "</span> + result);
+    <span class="keyword">int</span> ergebnis = addieren(<span class="number">5</span>, <span class="number">3</span>);
+    System.<span class="keyword">out</span>.println(<span class="string">"Summe: "</span> + ergebnis);
 }
             </div>
             
-            <h4>Overloading Methods</h4>
-            <p>Methods can have the same name but different parameters.</p>
+            <h4>Methoden-Überladung</h4>
+            <p>Methoden können denselben Namen haben, aber unterschiedliche Parameter.</p>
             <div class="code-block">
-<span class="keyword">public static int</span> multiply(<span class="keyword">int</span> a, <span class="keyword">int</span> b) {
+<span class="keyword">public static int</span> multiplizieren(<span class="keyword">int</span> a, <span class="keyword">int</span> b) {
     <span class="keyword">return</span> a * b;
 }
 
-<span class="keyword">public static double</span> multiply(<span class="keyword">double</span> a, <span class="keyword">double</span> b) {
+<span class="keyword">public static double</span> multiplizieren(<span class="keyword">double</span> a, <span class="keyword">double</span> b) {
     <span class="keyword">return</span> a * b;
 }
             </div>
         </section>
         
-        <!-- MODULE 5: ARRAYS -->
+        <!-- MODUL 5: ARRAYS UND SAMMLUNGEN -->
         <section id="arrays" class="module">
-            <h2>5. Arrays and Collections</h2>
+            <h2>5. Arrays und Sammlungen</h2>
             
             <h3>Arrays</h3>
-            <p>Arrays store multiple values of the same type in a single variable.</p>
+            <p>Arrays speichern mehrere Werte desselben Typs in einer einzelnen Variablen.</p>
             
-            <h4>Array Declaration and Initialization</h4>
+            <h4>Array-Deklaration und Initialisierung</h4>
             <div class="code-block">
-<span class="comment">// Method 1: Declare and initialize with values</span>
-<span class="keyword">int</span>[] numbers = {<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="number">40</span>};
+<span class="comment">// Methode 1: Deklariere und initialisiere mit Werten</span>
+<span class="keyword">int</span>[] zahlen = {<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="number">40</span>};
 
-<span class="comment">// Method 2: Declare and initialize with size</span>
-<span class="keyword">String</span>[] names = <span class="keyword">new</span> String[<span class="number">5</span>];
+<span class="comment">// Methode 2: Deklariere und initialisiere mit Größe</span>
+<span class="keyword">String</span>[] namen = <span class="keyword">new</span> String[<span class="number">5</span>];
 
-<span class="comment">// Access elements</span>
-System.<span class="keyword">out</span>.println(numbers[<span class="number">0</span>]); <span class="comment">// Output: 10</span>
-names[<span class="number">0</span>] = <span class="string">"Alice"</span>;
+<span class="comment">// Auf Elemente zugreifen</span>
+System.<span class="keyword">out</span>.println(zahlen[<span class="number">0</span>]); <span class="comment">// Output: 10</span>
+namen[<span class="number">0</span>] = <span class="string">"Alice"</span>;
             </div>
             
-            <h4>Iterating Through Arrays</h4>
+            <h4>Durchlaufe Arrays</h4>
             <div class="code-block">
-<span class="keyword">int</span>[] scores = {<span class="number">85</span>, <span class="number">90</span>, <span class="number">78</span>, <span class="number">92</span>};
+<span class="keyword">int</span>[] noten = {<span class="number">85</span>, <span class="number">90</span>, <span class="number">78</span>, <span class="number">92</span>};
 
-<span class="comment">// Using for loop</span>
-<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i < scores.length; i++) {
-    System.<span class="keyword">out</span>.println(scores[i]);
+<span class="comment">// Mit for-Schleife</span>
+<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i < noten.length; i++) {
+    System.<span class="keyword">out</span>.println(noten[i]);
 }
 
-<span class="comment">// Using enhanced for loop</span>
-<span class="keyword">for</span> (<span class="keyword">int</span> score : scores) {
-    System.<span class="keyword">out</span>.println(score);
+<span class="comment">// Mit erweiterte for-Schleife</span>
+<span class="keyword">for</span> (<span class="keyword">int</span> note : noten) {
+    System.<span class="keyword">out</span>.println(note);
 }
             </div>
             
             <h3>ArrayList</h3>
-            <p>ArrayList is a dynamic array that can grow or shrink in size.</p>
+            <p>ArrayList ist ein dynamisches Array, das wachsen oder schrumpfen kann.</p>
             
             <div class="code-block">
 <span class="keyword">import</span> java.util.ArrayList;
 
-<span class="keyword">public class</span> ArrayListExample {
+<span class="keyword">public class</span> ArrayListBeispiel {
     <span class="keyword">public static void</span> main(String[] args) {
-        ArrayList&lt;String&gt; fruits = <span class="keyword">new</span> ArrayList&lt;&gt;();
+        ArrayList&lt;String&gt; frueechte = <span class="keyword">new</span> ArrayList&lt;&gt;();
         
-        fruits.add(<span class="string">"Apple"</span>);
-        fruits.add(<span class="string">"Banana"</span>);
-        fruits.add(<span class="string">"Orange"</span>);
+        frueechte.add(<span class="string">"Apfel"</span>);
+        frueechte.add(<span class="string">"Banane"</span>);
+        frueechte.add(<span class="string">"Orange"</span>);
         
-        System.<span class="keyword">out</span>.println(fruits.get(<span class="number">0</span>)); <span class="comment">// Apple</span>
-        System.<span class="keyword">out</span>.println(fruits.size()); <span class="comment">// 3</span>
+        System.<span class="keyword">out</span>.println(frueechte.get(<span class="number">0</span>)); <span class="comment">// Apfel</span>
+        System.<span class="keyword">out</span>.println(frueechte.size()); <span class="comment">// 3</span>
         
-        <span class="keyword">for</span> (String fruit : fruits) {
-            System.<span class="keyword">out</span>.println(fruit);
+        <span class="keyword">for</span> (String frucht : frueechte) {
+            System.<span class="keyword">out</span>.println(frucht);
         }
     }
 }
             </div>
         </section>
         
-        <!-- MODULE 6: OOP -->
+        <!-- MODUL 6: OOP -->
         <section id="oop" class="module">
-            <h2>6. Object-Oriented Programming (OOP)</h2>
+            <h2>6. Objektorientierte Programmierung (OOP)</h2>
             
-            <p>OOP is a programming paradigm based on objects and classes. It's fundamental to modern Java development.</p>
+            <p>OOP ist ein Programmierparadigma, das auf Objekten und Klassen basiert. Es ist grundlegend für die moderne Java-Entwicklung.</p>
             
-            <h3>Classes and Objects</h3>
-            <p>A class is a blueprint for creating objects. An object is an instance of a class.</p>
+            <h3>Klassen und Objekte</h3>
+            <p>Eine Klasse ist ein Blueprint für die Erstellung von Objekten. Ein Objekt ist eine Instanz einer Klasse.</p>
             
             <div class="code-block">
-<span class="keyword">public class</span> Student {
-    <span class="comment">// Attributes (Properties)</span>
+<span class="keyword">public class</span> Schueler {
+    <span class="comment">// Attribute (Eigenschaften)</span>
     <span class="keyword">private</span> String name;
-    <span class="keyword">private</span> <span class="keyword">int</span> age;
+    <span class="keyword">private</span> <span class="keyword">int</span> alter;
     <span class="keyword">private</span> <span class="keyword">double</span> gpa;
     
-    <span class="comment">// Constructor</span>
-    <span class="keyword">public</span> Student(String name, <span class="keyword">int</span> age, <span class="keyword">double</span> gpa) {
+    <span class="comment">// Konstruktor</span>
+    <span class="keyword">public</span> Schueler(String name, <span class="keyword">int</span> alter, <span class="keyword">double</span> gpa) {
         <span class="keyword">this</span>.name = name;
-        <span class="keyword">this</span>.age = age;
+        <span class="keyword">this</span>.alter = alter;
         <span class="keyword">this</span>.gpa = gpa;
     }
     
-    <span class="comment">// Getter and Setter methods</span>
+    <span class="comment">// Getter und Setter Methoden</span>
     <span class="keyword">public</span> String getName() {
         <span class="keyword">return</span> name;
     }
@@ -574,234 +692,234 @@ names[<span class="number">0</span>] = <span class="string">"Alice"</span>;
         <span class="keyword">this</span>.name = name;
     }
     
-    <span class="comment">// Regular method</span>
-    <span class="keyword">public void</span> displayInfo() {
-        System.<span class="keyword">out</span>.println(<span class="string">"Name: "</span> + name + <span class="string">", Age: "</span> + age);
+    <span class="comment">// Reguläre Methode</span>
+    <span class="keyword">public void</span> zeigeInfo() {
+        System.<span class="keyword">out</span>.println(<span class="string">"Name: "</span> + name + <span class="string">", Alter: "</span> + alter);
     }
 }
 
-<span class="comment">// Creating objects</span>
-Student student1 = <span class="keyword">new</span> Student(<span class="string">"Alice"</span>, <span class="number">20</span>, <span class="number">3.85</span>);
-student1.displayInfo();
+<span class="comment">// Objekte erstellen</span>
+Schueler schueler1 = <span class="keyword">new</span> Schueler(<span class="string">"Alice"</span>, <span class="number">20</span>, <span class="number">3.85</span>);
+schueler1.zeigeInfo();
             </div>
             
-            <h3>The Four Pillars of OOP</h3>
+            <h3>Die vier Säulen der OOP</h3>
             
-            <h4>1. Encapsulation</h4>
-            <p>Bundling data (attributes) and methods into a single unit (class), hiding internal details from the outside world.</p>
+            <h4>1. Kapselung (Encapsulation)</h4>
+            <p>Bündelung von Daten (Attributen) und Methoden in einer einzelnen Einheit (Klasse) und Verbergen interner Details.</p>
             <div class="box">
-                <strong>Benefits:</strong>
+                <strong>Vorteile:</strong>
                 <ul style="margin-left: 20px; margin-top: 10px;">
-                    <li>Data protection using access modifiers (private, public, protected)</li>
-                    <li>Control over data access through getters and setters</li>
-                    <li>Easy maintenance and modification</li>
+                    <li>Datenschutz durch Zugriffmodifizierer (private, public, protected)</li>
+                    <li>Kontrolle des Datenzugriffs durch Getter und Setter</li>
+                    <li>Einfache Wartung und Modifikation</li>
                 </ul>
             </div>
             
-            <h4>2. Inheritance</h4>
-            <p>Creating a new class by inheriting properties and methods from an existing class.</p>
+            <h4>2. Vererbung (Inheritance)</h4>
+            <p>Erstelle eine neue Klasse, indem du Eigenschaften und Methoden von einer vorhandenen Klasse erbst.</p>
             <div class="code-block">
 <span class="keyword">public class</span> Person {
     <span class="keyword">protected</span> String name;
     
-    <span class="keyword">public void</span> greet() {
-        System.<span class="keyword">out</span>.println(<span class="string">"Hello, I'm "</span> + name);
+    <span class="keyword">public void</span> gruessen() {
+        System.<span class="keyword">out</span>.println(<span class="string">"Hallo, ich bin "</span> + name);
     }
 }
 
-<span class="keyword">public class</span> Teacher <span class="keyword">extends</span> Person {
-    <span class="keyword">private</span> String subject;
+<span class="keyword">public class</span> Lehrer <span class="keyword">extends</span> Person {
+    <span class="keyword">private</span> String fach;
     
-    <span class="keyword">public</span> Teacher(String name, String subject) {
+    <span class="keyword">public</span> Lehrer(String name, String fach) {
         <span class="keyword">this</span>.name = name;
-        <span class="keyword">this</span>.subject = subject;
+        <span class="keyword">this</span>.fach = fach;
     }
     
-    <span class="keyword">public void</span> teach() {
-        System.<span class="keyword">out</span>.println(<span class="string">"Teaching "</span> + subject);
+    <span class="keyword">public void</span> unterrichten() {
+        System.<span class="keyword">out</span>.println(<span class="string">"Unterrichte "</span> + fach);
     }
 }
             </div>
             
-            <h4>3. Polymorphism</h4>
-            <p>The ability to use an object in multiple forms or appear in many forms.</p>
+            <h4>3. Polymorphismus (Polymorphism)</h4>
+            <p>Die Fähigkeit, ein Objekt in mehreren Formen zu verwenden.</p>
             <div class="code-block">
-<span class="keyword">public class</span> Animal {
-    <span class="keyword">public void</span> sound() {
-        System.<span class="keyword">out</span>.println(<span class="string">"Some sound"</span>);
+<span class="keyword">public class</span> Tier {
+    <span class="keyword">public void</span> laut() {
+        System.<span class="keyword">out</span>.println(<span class="string">"Ein Laut"</span>);
     }
 }
 
-<span class="keyword">public class</span> Dog <span class="keyword">extends</span> Animal {
+<span class="keyword">public class</span> Hund <span class="keyword">extends</span> Tier {
     @<span class="keyword">Override</span>
-    <span class="keyword">public void</span> sound() {
-        System.<span class="keyword">out</span>.println(<span class="string">"Woof!"</span>);
+    <span class="keyword">public void</span> laut() {
+        System.<span class="keyword">out</span>.println(<span class="string">"Wuff!"</span>);
     }
 }
 
-<span class="keyword">public class</span> Cat <span class="keyword">extends</span> Animal {
+<span class="keyword">public class</span> Katze <span class="keyword">extends</span> Tier {
     @<span class="keyword">Override</span>
-    <span class="keyword">public void</span> sound() {
-        System.<span class="keyword">out</span>.println(<span class="string">"Meow!"</span>);
+    <span class="keyword">public void</span> laut() {
+        System.<span class="keyword">out</span>.println(<span class="string">"Miau!"</span>);
     }
 }
             </div>
             
-            <h4>4. Abstraction</h4>
-            <p>Hiding complex implementation details and showing only the essential features.</p>
+            <h4>4. Abstraktion (Abstraction)</h4>
+            <p>Verbergen komplexer Implementierungsdetails und Zeigen nur der wesentlichen Funktionen.</p>
             <div class="code-block">
-<span class="keyword">abstract public class</span> Vehicle {
-    <span class="keyword">abstract public void</span> start();
-    <span class="keyword">abstract public void</span> stop();
+<span class="keyword">abstract public class</span> Fahrzeug {
+    <span class="keyword">abstract public void</span> starten();
+    <span class="keyword">abstract public void</span> stoppen();
 }
 
-<span class="keyword">public class</span> Car <span class="keyword">extends</span> Vehicle {
+<span class="keyword">public class</span> Auto <span class="keyword">extends</span> Fahrzeug {
     @<span class="keyword">Override</span>
-    <span class="keyword">public void</span> start() {
-        System.<span class="keyword">out</span>.println(<span class="string">"Car engine started"</span>);
+    <span class="keyword">public void</span> starten() {
+        System.<span class="keyword">out</span>.println(<span class="string">"Auto-Motor gestartet"</span>);
     }
     
     @<span class="keyword">Override</span>
-    <span class="keyword">public void</span> stop() {
-        System.<span class="keyword">out</span>.println(<span class="string">"Car stopped"</span>);
+    <span class="keyword">public void</span> stoppen() {
+        System.<span class="keyword">out</span>.println(<span class="string">"Auto gestoppt"</span>);
     }
 }
             </div>
         </section>
         
-        <!-- PRACTICE EXERCISES -->
+        <!-- ÜBUNGEN -->
         <section id="practice" class="module">
-            <h2>7. Practice Exercises</h2>
+            <h2>7. Übungsaufgaben</h2>
             
             <div class="exercise">
-                <h4>Exercise 1: Simple Calculator</h4>
-                <p><strong>Description:</strong> Create a program that takes two numbers and performs basic arithmetic operations (add, subtract, multiply, divide).</p>
-                <p><strong>Hint:</strong> Use a switch statement to select the operation.</p>
+                <h4>Übung 1: Einfacher Rechner</h4>
+                <p><strong>Beschreibung:</strong> Erstelle ein Programm, das zwei Zahlen nimmt und grundlegende arithmetische Operationen durchführt (Addieren, Subtrahieren, Multiplizieren, Dividieren).</p>
+                <p><strong>Hinweis:</strong> Verwende eine Switch-Anweisung, um die Operation auszuwählen.</p>
             </div>
             
             <div class="exercise">
-                <h4>Exercise 2: Temperature Converter</h4>
-                <p><strong>Description:</strong> Write a program that converts temperature from Celsius to Fahrenheit and vice versa.</p>
-                <p><strong>Formula:</strong> F = (C × 9/5) + 32</p>
-                <p><strong>Hint:</strong> Use methods to perform conversions.</p>
+                <h4>Übung 2: Temperatur-Umrechner</h4>
+                <p><strong>Beschreibung:</strong> Schreibe ein Programm, das Temperaturen von Celsius in Fahrenheit und umgekehrt umrechnet.</p>
+                <p><strong>Formel:</strong> F = (C × 9/5) + 32</p>
+                <p><strong>Hinweis:</strong> Verwende Methoden für die Umrechnungen.</p>
             </div>
             
             <div class="exercise">
-                <h4>Exercise 3: Fibonacci Sequence</h4>
-                <p><strong>Description:</strong> Create a method that generates the first n numbers in the Fibonacci sequence.</p>
-                <p><strong>Example:</strong> 0, 1, 1, 2, 3, 5, 8, 13...</p>
-                <p><strong>Hint:</strong> Use a loop and keep track of the previous two numbers.</p>
+                <h4>Übung 3: Fibonacci-Folge</h4>
+                <p><strong>Beschreibung:</strong> Erstelle eine Methode, die die ersten n Zahlen der Fibonacci-Folge generiert.</p>
+                <p><strong>Beispiel:</strong> 0, 1, 1, 2, 3, 5, 8, 13...</p>
+                <p><strong>Hinweis:</strong> Verwende eine Schleife und verfolge die vorherigen zwei Zahlen.</p>
             </div>
             
             <div class="exercise">
-                <h4>Exercise 4: Grade Calculator</h4>
-                <p><strong>Description:</strong> Write a program that calculates the average of student grades and assigns a letter grade.</p>
-                <p><strong>Grading Scale:</strong> A: 90-100, B: 80-89, C: 70-79, D: 60-69, F: Below 60</p>
-                <p><strong>Hint:</strong> Use ArrayList to store grades and if-else for grade assignment.</p>
+                <h4>Übung 4: Notenrechner</h4>
+                <p><strong>Beschreibung:</strong> Schreibe ein Programm, das den Durchschnitt der Schülernoten berechnet und eine Schulnote vergibt.</p>
+                <p><strong>Notenskala:</strong> 1: 90-100, 2: 80-89, 3: 70-79, 4: 60-69, 5: Unter 60</p>
+                <p><strong>Hinweis:</strong> Verwende ArrayList zum Speichern von Noten und if-else für die Notenvergabe.</p>
             </div>
             
             <div class="exercise">
-                <h4>Exercise 5: Person Class</h4>
-                <p><strong>Description:</strong> Create a Person class with attributes (name, age, email) and methods (getAge(), setAge(), displayInfo()).</p>
-                <p><strong>Requirements:</strong></p>
+                <h4>Übung 5: Person-Klasse</h4>
+                <p><strong>Beschreibung:</strong> Erstelle eine Person-Klasse mit Attributen (Name, Alter, E-Mail) und Methoden (getAlter(), setAlter(), zeigeInfo()).</p>
+                <p><strong>Anforderungen:</strong></p>
                 <ul style="margin-left: 20px;">
-                    <li>Implement encapsulation with private attributes</li>
-                    <li>Create constructor to initialize attributes</li>
-                    <li>Implement getter and setter methods</li>
+                    <li>Implementiere Kapselung mit privaten Attributen</li>
+                    <li>Erstelle einen Konstruktor zum Initialisieren der Attribute</li>
+                    <li>Implementiere Getter- und Setter-Methoden</li>
                 </ul>
             </div>
             
             <div class="exercise">
-                <h4>Exercise 6: Inheritance - Employee and Manager</h4>
-                <p><strong>Description:</strong> Create an Employee class, then inherit it to create a Manager class with additional features.</p>
-                <p><strong>Employee attributes:</strong> name, employeeId, salary</p>
-                <p><strong>Manager additional:</strong> department, team size</p>
-                <p><strong>Hint:</strong> Use extends keyword and override methods.</p>
+                <h4>Übung 6: Vererbung - Angestellter und Manager</h4>
+                <p><strong>Beschreibung:</strong> Erstelle eine Angestellter-Klasse und erbe daraus, um eine Manager-Klasse mit zusätzlichen Funktionen zu erstellen.</p>
+                <p><strong>Angestellter-Attribute:</strong> Name, Personalnummer, Gehalt</p>
+                <p><strong>Manager-Zusätze:</strong> Abteilung, Teamgröße</p>
+                <p><strong>Hinweis:</strong> Verwende das extends-Schlüsselwort und überschreibe Methoden.</p>
             </div>
         </section>
         
-        <!-- HOMEWORK -->
+        <!-- HAUSAUFGABEN -->
         <section id="homework" class="module">
-            <h2>8. Homework Assignments</h2>
+            <h2>8. Hausaufgaben</h2>
             
             <div class="homework">
-                <h4>Homework 1: Bank Account System (Beginner)</h4>
-                <p><strong>Due:</strong> 1 Week</p>
-                <p><strong>Objective:</strong> Create a simple bank account management system using OOP.</p>
-                <p><strong>Requirements:</strong></p>
+                <h4>Hausaufgabe 1: Bankkonto-System (Anfänger)</h4>
+                <p><strong>Fälligkeitstag:</strong> 1 Woche</p>
+                <p><strong>Ziel:</strong> Erstelle ein einfaches Bankkonto-Verwaltungssystem mit OOP.</p>
+                <p><strong>Anforderungen:</strong></p>
                 <ul style="margin-left: 20px;">
-                    <li>Create a BankAccount class with attributes: accountHolder, accountNumber, balance</li>
-                    <li>Implement methods: deposit(amount), withdraw(amount), checkBalance()</li>
-                    <li>Ensure balance never goes negative</li>
-                    <li>Create a main method to test the class with at least 3 transactions</li>
+                    <li>Erstelle eine BankAccount-Klasse mit Attributen: Kontoinhaber, Kontonummer, Saldo</li>
+                    <li>Implementiere Methoden: einzahlen(betrag), abheben(betrag), checkSaldo()</li>
+                    <li>Stelle sicher, dass der Saldo nie negativ wird</li>
+                    <li>Erstelle eine main-Methode zum Testen der Klasse mit mindestens 3 Transaktionen</li>
                 </ul>
-                <p><strong>Bonus:</strong> Add interest calculation method for savings accounts</p>
+                <p><strong>Bonus:</strong> Füge eine Zinsberechnungsmethode für Sparkonten hinzu</p>
             </div>
             
             <div class="homework">
-                <h4>Homework 2: Library Management System (Intermediate)</h4>
-                <p><strong>Due:</strong> 2 Weeks</p>
-                <p><strong>Objective:</strong> Design a library management system using classes and inheritance.</p>
-                <p><strong>Requirements:</strong></p>
+                <h4>Hausaufgabe 2: Bibliotheksverwaltungssystem (Mittelstufe)</h4>
+                <p><strong>Fälligkeitstag:</strong> 2 Wochen</p>
+                <p><strong>Ziel:</strong> Entwerfe ein Bibliotheksverwaltungssystem mit Klassen und Vererbung.</p>
+                <p><strong>Anforderungen:</strong></p>
                 <ul style="margin-left: 20px;">
-                    <li>Create a Book class with: title, author, isbn, availableCopies</li>
-                    <li>Create a Library class to manage books using ArrayList</li>
-                    <li>Implement methods: addBook(), removeBook(), searchBook(), borrowBook(), returnBook()</li>
-                    <li>Create different book types (Fiction, NonFiction, Reference) inheriting from Book</li>
-                    <li>Each book type has different borrowing periods</li>
+                    <li>Erstelle eine Buch-Klasse mit: Titel, Autor, ISBN, verfügbareExemplare</li>
+                    <li>Erstelle eine Bibliothek-Klasse zum Verwalten von Büchern mit ArrayList</li>
+                    <li>Implementiere Methoden: addBuch(), removeBuch(), searchBuch(), borrowBuch(), returnBuch()</li>
+                    <li>Erstelle verschiedene Buchtypen (Roman, Sachbuch, Referenz), die von Buch erben</li>
+                    <li>Jeder Buchtyp hat unterschiedliche Ausleihperioden</li>
                 </ul>
-                <p><strong>Bonus:</strong> Add a Member class to track who borrows books</p>
+                <p><strong>Bonus:</strong> Füge eine Mitglied-Klasse hinzu, um zu verfolgen, wer Bücher ausleiht</p>
             </div>
             
             <div class="homework">
-                <h4>Homework 3: Student Management System (Intermediate)</h4>
-                <p><strong>Due:</strong> 2 Weeks</p>
-                <p><strong>Objective:</strong> Build a complete student management system using collections and OOP.</p>
-                <p><strong>Requirements:</strong></p>
+                <h4>Hausaufgabe 3: Schülerverwaltungssystem (Mittelstufe)</h4>
+                <p><strong>Fälligkeitstag:</strong> 2 Wochen</p>
+                <p><strong>Ziel:</strong> Erstelle ein vollständiges Schülerverwaltungssystem mit Collections und OOP.</p>
+                <p><strong>Anforderungen:</strong></p>
                 <ul style="margin-left: 20px;">
-                    <li>Create a Student class: studentId, name, email, gpa, courses (ArrayList)</li>
-                    <li>Create a Course class: courseId, courseName, instructor, credits</li>
-                    <li>Implement methods in Student: addCourse(), removeCourse(), calculateGPA()</li>
-                    <li>Create use Scanner to add students and courses interactively</li>
-                    <li>Display all students with their courses</li>
+                    <li>Erstelle eine Schüler-Klasse: schülerNummer, name, email, gpa, kurse (ArrayList)</li>
+                    <li>Erstelle eine Kurs-Klasse: kursNummer, kursName, instruktor, credits</li>
+                    <li>Implementiere Methoden in Schüler: addKurs(), removeKurs(), calculateGPA()</li>
+                    <li>Verwende Scanner, um Schüler und Kurse interaktiv hinzuzufügen</li>
+                    <li>Zeige alle Schüler mit ihren Kursen an</li>
                 </ul>
-                <p><strong>Bonus:</strong> Create a report showing top-performing students</p>
+                <p><strong>Bonus:</strong> Erstelle einen Bericht mit den besten Schülern</p>
             </div>
             
             <div class="homework">
-                <h4>Homework 4: Zoo Management System (Advanced)</h4>
-                <p><strong>Due:</strong> 3 Weeks</p>
-                <p><strong>Objective:</strong> Apply all learned concepts in a comprehensive project.</p>
-                <p><strong>Requirements:</strong></p>
+                <h4>Hausaufgabe 4: Zoo-Verwaltungssystem (Fortgeschritten)</h4>
+                <p><strong>Fälligkeitstag:</strong> 3 Wochen</p>
+                <p><strong>Ziel:</strong> Wende alle erlernten Konzepte in einem umfangreichen Projekt an.</p>
+                <p><strong>Anforderungen:</strong></p>
                 <ul style="margin-left: 20px;">
-                    <li>Create an abstract Animal class with properties: name, age, diet, enclosureSize</li>
-                    <li>Create specific animal classes (Lion, Elephant, Monkey) inheriting from Animal</li>
-                    <li>Implement polymorphic method: makeSound(), eat(), sleep()</li>
-                    <li>Create Zoo class to manage animals using ArrayList</li>
-                    <li>Implement Zoo features: addAnimal(), removeAnimal(), feedAll(), generateReport()</li>
-                    <li>Create a Zookeeper class to care for animals</li>
-                    <li>Use encapsulation for data protection</li>
+                    <li>Erstelle eine abstrakte Tier-Klasse mit Eigenschaften: name, alter, diät, gehäuseGröße</li>
+                    <li>Erstelle spezifische Tierklassen (Löwe, Elefant, Affe), die von Tier erben</li>
+                    <li>Implementiere polymorphe Methoden: makeSound(), eat(), sleep()</li>
+                    <li>Erstelle eine Zoo-Klasse zum Verwalten von Tieren mit ArrayList</li>
+                    <li>Implementiere Zoo-Funktionen: addTier(), removeTier(), feedAll(), generateReport()</li>
+                    <li>Erstelle eine Zookeeper-Klasse zur Pflege von Tieren</li>
+                    <li>Verwende Kapselung zum Schutz der Daten</li>
                 </ul>
-                <p><strong>Bonus:</strong> Add animal health tracking and medical care system</p>
+                <p><strong>Bonus:</strong> Füge Tiergesundheitsverfolgung und medizinisches Versorgungssystem hinzu</p>
             </div>
             
             <div class="homework">
-                <h4>Submission Guidelines</h4>
+                <h4>Abgaberichtlinien</h4>
                 <div class="box">
                     <ul style="margin-left: 20px;">
-                        <li>Submit all .java files in a single folder named "YourName_HW#"</li>
-                        <li>Include comments explaining your code</li>
-                        <li>Test your program thoroughly before submission</li>
-                        <li>Create a README.txt file explaining how to run your program</li>
-                        <li>Follow Java naming conventions (classes start with uppercase)</li>
-                        <li>Ensure there are no compilation errors</li>
+                        <li>Reiche alle .java-Dateien in einem einzelnen Ordner mit dem Namen "DeinName_HW#" ein</li>
+                        <li>Denke an ausführliche Kommentare über deinen Code</li>
+                        <li>Teste dein Programm gründlich vor der Abgabe</li>
+                        <li>Erstelle eine README.txt-Datei mit Erklärungen, wie dein Programm ausgeführt wird</li>
+                        <li>Befolge Java-Namenskonventionen (Klassen beginnen mit Großbuchstaben)</li>
+                        <li>Stelle sicher, dass keine Kompilierungsfehler vorhanden sind</li>
                     </ul>
                 </div>
             </div>
         </section>
         
         <footer>
-            <p>&copy; 2026 Beginner Java Course | Happy Coding! 💻</p>
+            <p>&copy; 2026 Anfänger-Java-Kurs | Viel Spaß beim Programmieren! 💻</p>
         </footer>
     </div>
 </body>
